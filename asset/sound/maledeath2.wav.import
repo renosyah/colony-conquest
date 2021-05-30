@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/maledeath2.wav-6b19523c9e9933c5c4193b3eaf3736e1.sample"
+
+[deps]
+
+source_file="res://asset/sound/maledeath2.wav"
+dest_files=[ "res://.import/maledeath2.wav-6b19523c9e9933c5c4193b3eaf3736e1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

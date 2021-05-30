@@ -1,0 +1,238 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://asset/ui/fonts/montserrat_eb_16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://asset/ui/buildings_icon_item/building_icon_item.gd" type="Script" id=2]
+[ext_resource path="res://asset/ui/icons/supply.png" type="Texture" id=3]
+[ext_resource path="res://asset/ui/icons/squad_icon/icon_squad_archer.png" type="Texture" id=4]
+[ext_resource path="res://asset/ui/icons/close.png" type="Texture" id=5]
+[ext_resource path="res://asset/ui/buildings/barrack.png" type="Texture" id=6]
+[ext_resource path="res://asset/ui/fonts/montserrat_eb_32.tres" type="DynamicFont" id=7]
+[ext_resource path="res://asset/ui/background/bg.png" type="Texture" id=8]
+
+[node name="building_item" type="PanelContainer"]
+margin_right = 500.0
+margin_bottom = 450.0
+rect_min_size = Vector2( 500, 450 )
+mouse_filter = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 493.0
+margin_bottom = 457.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 486.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 486.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 0, 150 )
+size_flags_vertical = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 20.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="icon" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_left = 24.0
+margin_right = 147.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 123, 150 )
+size_flags_vertical = 3
+texture = ExtResource( 6 )
+stretch_mode = 7
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 151.0
+margin_right = 171.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 175.0
+margin_right = 462.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="building_name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 287.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 1 )
+text = "Barrack"
+
+[node name="description" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 32.0
+margin_right = 287.0
+margin_bottom = 46.0
+text = "Allow to train infantry"
+autowrap = true
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 50.0
+margin_right = 287.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 20, 20 )
+
+[node name="list_troop" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 74.0
+margin_right = 287.0
+margin_bottom = 88.0
+text = "Unlock : "
+autowrap = true
+
+[node name="icon_troop_grid_container" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 92.0
+margin_right = 287.0
+margin_bottom = 92.0
+columns = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/icon_troop_grid_container"]
+visible = false
+margin_right = 50.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 50, 100 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 466.0
+margin_right = 486.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 178.0
+margin_right = 486.0
+margin_bottom = 198.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="display_only_button" type="Button" parent="VBoxContainer"]
+margin_top = 202.0
+margin_right = 486.0
+margin_bottom = 282.0
+rect_min_size = Vector2( 0, 80 )
+custom_fonts/font = ExtResource( 7 )
+text = " Build (2500)"
+icon = ExtResource( 3 )
+flat = true
+
+[node name="build_button" type="Button" parent="VBoxContainer"]
+margin_top = 286.0
+margin_right = 486.0
+margin_bottom = 366.0
+rect_min_size = Vector2( 0, 80 )
+custom_fonts/font = ExtResource( 7 )
+text = " Build (2500)"
+icon = ExtResource( 3 )
+
+[node name="demolish_button" type="Button" parent="VBoxContainer"]
+margin_top = 370.0
+margin_right = 486.0
+margin_bottom = 450.0
+rect_min_size = Vector2( 0, 80 )
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Demolish"
+icon = ExtResource( 5 )
+
+[node name="demolish_confirmation_box" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 493.0
+margin_bottom = 443.0
+
+[node name="building_name" type="Label" parent="demolish_confirmation_box"]
+margin_right = 486.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 7 )
+text = "Barrack"
+align = 1
+valign = 1
+
+[node name="description2" type="Label" parent="demolish_confirmation_box"]
+margin_top = 122.0
+margin_right = 486.0
+margin_bottom = 274.0
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 1 )
+text = "
+All unit upgrade will be lost with this building, Are you sure?
+
+"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="demolish_confirmation_box"]
+margin_top = 356.0
+margin_right = 486.0
+margin_bottom = 436.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="demolish_confirm_yes" type="Button" parent="demolish_confirmation_box/HBoxContainer"]
+margin_right = 241.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Yes"
+
+[node name="demolish_confirm_cancel" type="Button" parent="demolish_confirmation_box/HBoxContainer"]
+margin_left = 245.0
+margin_right = 486.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "No"
+
+[node name="unable_build" type="MarginContainer" parent="."]
+visible = false
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 493.0
+margin_bottom = 443.0
+mouse_filter = 2
+
+[node name="bg" type="TextureRect" parent="unable_build"]
+modulate = Color( 0, 0, 0, 0.588235 )
+margin_right = 486.0
+margin_bottom = 436.0
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="unable_build"]
+margin_top = 176.0
+margin_right = 486.0
+margin_bottom = 259.0
+custom_fonts/font = ExtResource( 7 )
+text = "Maximum building exceeded!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/build_button" to="." method="_on_build_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/demolish_button" to="." method="_on_demolish_button_pressed"]
+[connection signal="pressed" from="demolish_confirmation_box/HBoxContainer/demolish_confirm_yes" to="." method="_on_demolish_confirm_yes_pressed"]
+[connection signal="pressed" from="demolish_confirmation_box/HBoxContainer/demolish_confirm_cancel" to="." method="_on_demolish_confirm_cancel_pressed"]

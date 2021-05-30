@@ -1,0 +1,127 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "weapon_throwing"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.4, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, -5 ), Vector2( 2, -5 ), Vector2( 3, 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -60.014, -60.014, -60.014 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprite/ammo:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 1.1, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite/ammo:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.7, 0.9, 1, 1.1, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -4.25979, -4.25979, -19.1479, 26.9682, 45.1148, 45.1148, 45.1148, 44.053, -4.25979 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("sprite/ammo:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.7, 0.9, 1, 1.1, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.00470829, -3.26355 ), Vector2( 0.316002, -12.5392 ), Vector2( 8.13031, -17.7347 ), Vector2( 8.13, -35 ), Vector2( 16.42, -35 ), Vector2( 3.09748, -35.0822 ), Vector2( 29.777, -15 ), Vector2( 33.2552, -1.87333 ), Vector2( 0.00470829, -3.26355 ) ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_on_animation_firing_performed"
+} ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("arm_right:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.6, 0.7, 0.9, 1, 1.1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.68761, -8.07917 ), Vector2( -4.55321, -10.7519 ), Vector2( -11.5319, -8.89583 ), Vector2( -9.00771, -7.63372 ), Vector2( -29.0529, -18.7699 ), Vector2( -24.153, -28.1244 ), Vector2( -31.0574, -13.6473 ), Vector2( -12.5713, -19.2154 ), Vector2( -12.5713, -11.42 ), Vector2( -0.717807, 0.447029 ), Vector2( -2.27538, -2.33138 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("arm_right:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.6, 0.7, 0.9, 1, 1.1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 74.2409, 74.2409, 74.2409, 203.082, 241.581, 258.032, 258.032, 301.317, 352.955, 396.606, 413.274 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("arm_left:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -1.30524, -1.30524 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("arm_left:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.668031, -6.45376 ), Vector2( 1.05988, 0.616806 ) ]
+}

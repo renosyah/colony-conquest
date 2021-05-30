@@ -1,0 +1,1232 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://asset/ui/fonts/montserrat_eb_48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://asset/ui/fonts/montserrat_eb_16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://asset/ui/icons/recruit.png" type="Texture" id=3]
+[ext_resource path="res://asset/ui/icons/supply.png" type="Texture" id=4]
+[ext_resource path="res://asset/ui/icons/close.png" type="Texture" id=5]
+[ext_resource path="res://asset/ui/icons/building.png" type="Texture" id=6]
+[ext_resource path="res://asset/ui/icons/focus_attack.png" type="Texture" id=7]
+[ext_resource path="res://asset/ui/icons/castle.png" type="Texture" id=8]
+[ext_resource path="res://asset/ui/background/bg.png" type="Texture" id=9]
+[ext_resource path="res://asset/ui/fonts/montserrat_eb_32.tres" type="DynamicFont" id=10]
+[ext_resource path="res://asset/game/battle_result/battle_result.tscn" type="PackedScene" id=11]
+[ext_resource path="res://asset/ui/icons/find_fort.png" type="Texture" id=12]
+[ext_resource path="res://asset/ui/mini_map/MiniMap.tscn" type="PackedScene" id=13]
+[ext_resource path="res://asset/ui/icons/info.png" type="Texture" id=14]
+[ext_resource path="res://asset/ui/icons/surrender.png" type="Texture" id=15]
+[ext_resource path="res://asset/ui/bar/bar.png" type="Texture" id=16]
+[ext_resource path="res://asset/game/game_ui/game_ui.gd" type="Script" id=17]
+[ext_resource path="res://asset/military/fort/castle.png" type="Texture" id=18]
+[ext_resource path="res://asset/ui/mini_map/border_no_transparent.png" type="Texture" id=19]
+[ext_resource path="res://asset/ui/icons/map.png" type="Texture" id=20]
+[ext_resource path="res://asset/ui/icons/setting.png" type="Texture" id=21]
+[ext_resource path="res://asset/military/logo/logo_ui.tscn" type="PackedScene" id=22]
+[ext_resource path="res://asset/menu/setting_menu/setting_menu.tscn" type="PackedScene" id=23]
+
+[node name="game_ui" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="game_ui_menu" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="VBoxContainer" parent="CanvasLayer/game_ui_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/Control"]
+margin_right = 649.0
+margin_bottom = 230.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer"]
+margin_right = 187.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 187, 230 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer"]
+margin_left = 191.0
+margin_right = 478.0
+margin_bottom = 174.0
+mouse_filter = 2
+size_flags_vertical = 0
+
+[node name="margin_container" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2"]
+margin_right = 287.0
+margin_bottom = 80.0
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2/margin_container"]
+modulate = Color( 0.239216, 0.239216, 0.239216, 1 )
+margin_right = 287.0
+margin_bottom = 80.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="TextureRect" type="NinePatchRect" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2/margin_container"]
+margin_right = 287.0
+margin_bottom = 80.0
+texture = ExtResource( 19 )
+region_rect = Rect2( -30.1827, -33.1891, 545.51, 408.559 )
+patch_margin_left = 82
+patch_margin_top = 37
+patch_margin_right = 62
+patch_margin_bottom = 10
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2/margin_container"]
+margin_right = 287.0
+margin_bottom = 80.0
+mouse_filter = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2/margin_container/HBoxContainer"]
+margin_right = 20.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 20, 80 )
+size_flags_vertical = 0
+
+[node name="logistic_info_button" type="Button" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2/margin_container/HBoxContainer"]
+margin_left = 24.0
+margin_top = 10.0
+margin_right = 124.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 100, 60 )
+focus_mode = 0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+enabled_focus_mode = 0
+text = " 0"
+icon = ExtResource( 4 )
+flat = true
+align = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2/margin_container/HBoxContainer"]
+margin_left = 128.0
+margin_right = 148.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 20, 80 )
+size_flags_vertical = 0
+
+[node name="fort_info_button" type="Button" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2/margin_container/HBoxContainer"]
+margin_left = 152.0
+margin_top = 10.0
+margin_right = 263.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 60 )
+focus_mode = 0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+enabled_focus_mode = 0
+text = " 4/5"
+icon = ExtResource( 8 )
+flat = true
+align = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2/margin_container/HBoxContainer"]
+margin_left = 267.0
+margin_right = 287.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 20, 80 )
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2"]
+margin_top = 84.0
+margin_right = 287.0
+margin_bottom = 174.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_right = 10.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="fort_name" type="Label" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 14.0
+margin_right = 287.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "Fort d ffffffffffffffffffffffffffffffff"
+autowrap = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer"]
+margin_left = 482.0
+margin_right = 635.0
+margin_bottom = 230.0
+mouse_filter = 2
+size_flags_horizontal = 11
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_pause" type="Button" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer"]
+margin_left = 73.0
+margin_right = 153.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 8
+icon = ExtResource( 15 )
+flat = true
+expand_icon = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 153.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="button_setting" type="Button" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer"]
+margin_left = 93.0
+margin_top = 98.0
+margin_right = 153.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 60, 60 )
+size_flags_horizontal = 8
+icon = ExtResource( 21 )
+flat = true
+expand_icon = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer"]
+margin_left = 639.0
+margin_right = 649.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="event_display" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/Control"]
+margin_top = 234.0
+margin_right = 649.0
+margin_bottom = 410.0
+mouse_filter = 2
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control/event_display"]
+margin_right = 649.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="Label" type="Label" parent="CanvasLayer/game_ui_menu/Control/event_display"]
+margin_top = 84.0
+margin_right = 649.0
+margin_bottom = 144.0
+custom_fonts/font = ExtResource( 1 )
+text = "Fort is Capture"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer/game_ui_menu/Control/event_display"]
+margin_top = 148.0
+margin_right = 649.0
+margin_bottom = 176.0
+custom_fonts/font = ExtResource( 2 )
+text = "Fort comdor is now ours"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin_center" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control"]
+margin_top = 414.0
+margin_right = 649.0
+margin_bottom = 757.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="label_instruction" type="Label" parent="CanvasLayer/game_ui_menu/Control"]
+margin_top = 761.0
+margin_right = 649.0
+margin_bottom = 820.0
+size_flags_vertical = 9
+custom_fonts/font = ExtResource( 2 )
+text = "Select another fort to attack/reinforce
+"
+align = 1
+valign = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/Control"]
+margin_top = 824.0
+margin_right = 649.0
+margin_bottom = 1024.0
+rect_min_size = Vector2( 0, 160 )
+mouse_filter = 2
+size_flags_vertical = 9
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2"]
+margin_bottom = 200.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2"]
+margin_left = 4.0
+margin_right = 645.0
+margin_bottom = 200.0
+
+[node name="all_fort_attack_button" type="Button" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer"]
+margin_right = 125.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 125, 200 )
+icon = ExtResource( 7 )
+expand_icon = true
+
+[node name="Label" type="Label" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/all_fort_attack_button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Attack!"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="build_menu_button" type="Button" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer"]
+margin_left = 129.0
+margin_right = 254.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 125, 200 )
+icon = ExtResource( 6 )
+expand_icon = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/build_menu_button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Build"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="fort_training_troop_info" type="Button" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer"]
+margin_left = 258.0
+margin_right = 383.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 125, 200 )
+icon = ExtResource( 3 )
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/fort_training_troop_info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -35.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/fort_training_troop_info/VBoxContainer"]
+margin_right = 115.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 115, 160 )
+size_flags_vertical = 3
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/fort_training_troop_info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Recruit"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fort_training_progress" type="TextureProgress" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/fort_training_troop_info"]
+modulate = Color( 0.172549, 0.172549, 0.172549, 0.827451 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 0.01
+value = 100.0
+texture_progress = ExtResource( 16 )
+fill_mode = 5
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/fort_training_troop_info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0.5"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fort_info_button" type="Button" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer"]
+margin_left = 387.0
+margin_right = 512.0
+margin_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 125, 200 )
+icon = ExtResource( 14 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/fort_info_button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Info"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="deselect_button" type="Button" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer"]
+margin_left = 516.0
+margin_right = 641.0
+margin_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 125, 200 )
+icon = ExtResource( 5 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/deselect_button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Close"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/Control/HBoxContainer2"]
+margin_left = 649.0
+margin_right = 649.0
+margin_bottom = 200.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="MiniMap" parent="CanvasLayer/game_ui_menu" instance=ExtResource( 13 )]
+
+[node name="open_map_button" type="Button" parent="CanvasLayer/game_ui_menu"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 100 )
+size_flags_vertical = 10
+toggle_mode = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/game_ui_menu/open_map_button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 20 )
+expand = true
+
+[node name="focus_to_my_region_button" type="Button" parent="CanvasLayer/game_ui_menu"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 8
+size_flags_vertical = 10
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/game_ui_menu/focus_to_my_region_button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 12 )
+
+[node name="close_minimap_button" type="Button" parent="CanvasLayer/game_ui_menu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -112.0
+margin_top = -100.0
+margin_right = 112.0
+rect_min_size = Vector2( 200, 100 )
+custom_fonts/font = ExtResource( 10 )
+text = "  Close Map  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/game_ui_menu"]
+visible = false
+modulate = Color( 0, 0, 0, 0.588235 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="battle_result" parent="CanvasLayer/game_ui_menu" instance=ExtResource( 11 )]
+visible = false
+
+[node name="fort_info_panel" type="PanelContainer" parent="CanvasLayer/game_ui_menu"]
+visible = false
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 20.0
+margin_top = -399.0
+margin_right = -20.0
+margin_bottom = 399.0
+grow_vertical = 2
+rect_min_size = Vector2( 540, 200 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 553.0
+margin_bottom = 875.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer"]
+margin_right = 546.0
+margin_bottom = 80.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="Label" type="Label" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/HBoxContainer"]
+margin_left = 84.0
+margin_top = 10.0
+margin_right = 462.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Fort "
+align = 1
+valign = 1
+
+[node name="button_close_info_fort" type="Button" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/HBoxContainer"]
+margin_left = 466.0
+margin_right = 546.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 10 )
+icon = ExtResource( 5 )
+expand_icon = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer"]
+margin_top = 84.0
+margin_right = 546.0
+margin_bottom = 784.0
+rect_min_size = Vector2( 0, 700 )
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer"]
+margin_right = 546.0
+margin_bottom = 790.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_right = 534.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 0, 45 )
+
+[node name="Control" type="Control" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 534.0
+margin_bottom = 349.0
+rect_min_size = Vector2( 0, 300 )
+mouse_filter = 2
+size_flags_horizontal = 7
+size_flags_vertical = 3
+
+[node name="bg" type="TextureRect" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -260.0
+margin_top = -286.0
+margin_right = 260.0
+rect_min_size = Vector2( 150, 150 )
+mouse_filter = 2
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo_ui" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/Control" instance=ExtResource( 22 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -133.905
+margin_right = 0.0
+margin_bottom = -33.9052
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -70.0
+margin_right = 10.0
+margin_bottom = 128.468
+rect_min_size = Vector2( 200, 200 )
+mouse_filter = 2
+texture = ExtResource( 18 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -260.0
+margin_top = -60.0
+margin_right = 261.0
+grow_horizontal = 0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fg" type="TextureRect" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/Control/MarginContainer4"]
+modulate = Color( 0, 0, 0, 0.588235 )
+margin_right = 521.0
+margin_bottom = 60.0
+mouse_filter = 2
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="colony_name" type="Label" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/Control/MarginContainer4"]
+margin_right = 521.0
+margin_bottom = 60.0
+grow_vertical = 0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+size_flags_vertical = 12
+custom_fonts/font = ExtResource( 2 )
+text = "Conny's colony"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 353.0
+margin_right = 534.0
+margin_bottom = 433.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 437.0
+margin_right = 534.0
+margin_bottom = 465.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 54.0
+margin_right = 480.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "bonus"
+autowrap = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 484.0
+margin_right = 534.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 469.0
+margin_right = 534.0
+margin_bottom = 528.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
+margin_right = 50.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
+margin_left = 54.0
+margin_right = 480.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "
+Logistic Upgrade : "
+autowrap = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
+margin_left = 484.0
+margin_right = 534.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 532.0
+margin_right = 534.0
+margin_bottom = 532.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
+margin_right = 50.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
+margin_left = 54.0
+margin_right = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
+margin_left = 484.0
+margin_right = 534.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 536.0
+margin_right = 534.0
+margin_bottom = 595.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 50.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 54.0
+margin_right = 480.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "
+Fort Upgrade : "
+autowrap = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 484.0
+margin_right = 534.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 599.0
+margin_right = 534.0
+margin_bottom = 599.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+margin_right = 50.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 54.0
+margin_right = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 484.0
+margin_right = 534.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 603.0
+margin_right = 534.0
+margin_bottom = 662.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+margin_right = 50.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+margin_left = 54.0
+margin_right = 480.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "
+Special Building : "
+autowrap = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+margin_left = 484.0
+margin_right = 534.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 666.0
+margin_right = 534.0
+margin_bottom = 666.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 50.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 54.0
+margin_right = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 484.0
+margin_right = 534.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 670.0
+margin_right = 534.0
+margin_bottom = 790.0
+rect_min_size = Vector2( 0, 120 )
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer"]
+margin_top = 788.0
+margin_right = 546.0
+margin_bottom = 868.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="fort_recruitment_center" type="PanelContainer" parent="CanvasLayer/game_ui_menu"]
+visible = false
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 20.0
+margin_top = -217.0
+margin_right = -20.0
+margin_bottom = 217.0
+grow_vertical = 2
+rect_min_size = Vector2( 540, 200 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 553.0
+margin_bottom = 427.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer"]
+margin_right = 546.0
+margin_bottom = 137.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/HBoxContainer2"]
+margin_right = 80.0
+margin_bottom = 137.0
+rect_min_size = Vector2( 80, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/HBoxContainer2"]
+margin_left = 84.0
+margin_right = 462.0
+margin_bottom = 137.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 378.0
+margin_bottom = 123.0
+custom_fonts/font = ExtResource( 1 )
+text = "Manage
+Recruitment"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 127.0
+margin_right = 378.0
+margin_bottom = 137.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="button_close_fort_recruitment_center" type="Button" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/HBoxContainer2"]
+margin_left = 466.0
+margin_right = 546.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 10 )
+icon = ExtResource( 5 )
+expand_icon = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer"]
+margin_top = 141.0
+margin_right = 546.0
+margin_bottom = 231.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/HBoxContainer3"]
+margin_right = 50.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/HBoxContainer3"]
+margin_left = 54.0
+margin_right = 492.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "Troop will be recruit randomly, to disable recruitment of some troop, click troop image."
+align = 1
+autowrap = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/HBoxContainer3"]
+margin_left = 496.0
+margin_right = 546.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer"]
+margin_top = 235.0
+margin_right = 546.0
+margin_bottom = 420.0
+mouse_filter = 1
+scroll_vertical_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/ScrollContainer"]
+margin_right = 546.0
+margin_bottom = 185.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_right = 546.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 0, 45 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 546.0
+margin_bottom = 77.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 54.0
+margin_right = 492.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "troops"
+align = 1
+autowrap = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 496.0
+margin_right = 546.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="GridContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 81.0
+margin_right = 546.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_right = 20.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 24.0
+margin_right = 24.0
+margin_bottom = 80.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 28.0
+margin_right = 228.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 165.0
+margin_right = 546.0
+margin_bottom = 185.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="fort_build_menu" type="PanelContainer" parent="CanvasLayer/game_ui_menu"]
+visible = false
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 20.0
+margin_top = -185.0
+margin_right = -20.0
+margin_bottom = 186.0
+grow_vertical = 2
+rect_min_size = Vector2( 540, 200 )
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 553.0
+margin_bottom = 364.0
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer"]
+margin_right = 546.0
+margin_bottom = 137.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 137.0
+rect_min_size = Vector2( 80, 0 )
+
+[node name="Label" type="Label" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/HBoxContainer/MarginContainer"]
+margin_right = 80.0
+margin_bottom = 137.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "1/4"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/HBoxContainer"]
+margin_left = 84.0
+margin_right = 462.0
+margin_bottom = 137.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 378.0
+margin_bottom = 123.0
+custom_fonts/font = ExtResource( 1 )
+text = "Manage
+Buildings"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 127.0
+margin_right = 378.0
+margin_bottom = 137.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="button_close_fort_building_menu" type="Button" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/HBoxContainer"]
+margin_left = 466.0
+margin_right = 546.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 10 )
+icon = ExtResource( 5 )
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer"]
+margin_top = 141.0
+margin_right = 546.0
+margin_bottom = 200.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/HBoxContainer2"]
+margin_right = 50.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/HBoxContainer2"]
+margin_left = 54.0
+margin_right = 492.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+text = "You can choose what to build and what to destroy"
+align = 1
+autowrap = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/HBoxContainer2"]
+margin_left = 496.0
+margin_right = 546.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer"]
+margin_top = 204.0
+margin_right = 546.0
+margin_bottom = 357.0
+mouse_filter = 1
+scroll_vertical_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/ScrollContainer"]
+margin_right = 546.0
+margin_bottom = 153.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_right = 546.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 0, 45 )
+
+[node name="GridContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 546.0
+margin_bottom = 129.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_right = 20.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 24.0
+margin_right = 24.0
+margin_bottom = 80.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/ScrollContainer/VBoxContainer/GridContainer"]
+margin_left = 28.0
+margin_right = 228.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 133.0
+margin_right = 546.0
+margin_bottom = 153.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="setting_menu" parent="CanvasLayer/game_ui_menu" instance=ExtResource( 23 )]
+visible = false
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer/button_pause" to="." method="_on_button_pause_pressed"]
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/Control/HBoxContainer/VBoxContainer/button_setting" to="." method="_on_button_setting_pressed"]
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/all_fort_attack_button" to="." method="_on_all_fort_attack_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/build_menu_button" to="." method="_on_build_menu_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/fort_training_troop_info" to="." method="_on_fort_training_troop_info_pressed"]
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/fort_info_button" to="." method="_on_fort_info_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/Control/HBoxContainer2/HBoxContainer/deselect_button" to="." method="_on_deselect_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/game_ui_menu/open_map_button" to="." method="_on_open_map_button_toggled"]
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/focus_to_my_region_button" to="." method="_on_focus_to_my_region_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/close_minimap_button" to="." method="_on_close_minimap_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/fort_info_panel/VBoxContainer/HBoxContainer/button_close_info_fort" to="." method="_on_button_close_info_fort_pressed"]
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/fort_recruitment_center/VBoxContainer/HBoxContainer2/button_close_fort_recruitment_center" to="." method="_on_button_close_fort_recruitment_center_pressed"]
+[connection signal="pressed" from="CanvasLayer/game_ui_menu/fort_build_menu/VBoxContainer/HBoxContainer/button_close_fort_building_menu" to="." method="_on_button_close_fort_building_menu_pressed"]
+[connection signal="on_setting_close_button_press" from="CanvasLayer/game_ui_menu/setting_menu" to="." method="_on_setting_menu_on_setting_close_button_press"]

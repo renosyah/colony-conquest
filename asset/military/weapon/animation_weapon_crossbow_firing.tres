@@ -1,0 +1,127 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "weapon_crossbow_firing"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 0.9, 1.4, 1.6, 1.9, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.5, 3.7, 3.9, 4.1, 4.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7.5, -9.16667 ), Vector2( 10, -10 ), Vector2( -5, -9.58 ), Vector2( 10, -10 ), Vector2( 15.3547, 0.394351 ), Vector2( 15.0397, 9.37129 ), Vector2( 12.8348, 6.69396 ), Vector2( 15.0397, 9.68628 ), Vector2( 12.8348, 6.69396 ), Vector2( 15.0397, 9.68628 ), Vector2( 12.8348, 6.69396 ), Vector2( 15.0397, 9.68628 ), Vector2( 15.3547, 0.394351 ), Vector2( 10, -10 ), Vector2( 10, -10 ), Vector2( 12, -9.58 ), Vector2( 10, -5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8, 1.6, 1.9, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.5, 4.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 24.8301, 55.1523, 55.1523, 55.1523, 55.1523, 55.1523, 55.1523, 55.1523, 24.8301, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprite/ammo:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.8, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite/ammo:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("sprite/ammo:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.0124995 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.48651, -2.22976 ) ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_on_animation_firing_performed"
+} ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("arm_left:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.8, 0.9, 1.4, 1.6, 1.9, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.5, 3.7, 3.9, 4.1, 4.4, 4.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -7.6954, -12.0533 ), Vector2( -2.8291, -10.8572 ), Vector2( -20.9084, -12.0134 ), Vector2( -6.40291, -16.2179 ), Vector2( -3.7751, -9.49075 ), Vector2( 2.74184, -1.60735 ), Vector2( 4.31852, -6.33739 ), Vector2( 6.42076, -3.18403 ), Vector2( 1.90094, -2.55336 ), Vector2( 3.37251, -10.0163 ), Vector2( 6.42076, -3.18403 ), Vector2( 1.90094, -2.55336 ), Vector2( 3.37251, -10.0163 ), Vector2( 6.42076, -3.18403 ), Vector2( 1.90094, -2.55336 ), Vector2( 3.37251, -10.0163 ), Vector2( 3.2674, -8.01918 ), Vector2( 2.42651, -6.65272 ), Vector2( -4.40578, -18.215 ), Vector2( -6.40291, -16.8486 ), Vector2( -3.9794, -15.2464 ), Vector2( -7.738, -8.26351 ), Vector2( -6.2494, -7.00216 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("arm_left:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.9, 1.4, 1.6, 1.9, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.5, 3.7, 3.9, 4.1, 4.4, 4.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 34.6268, 15.2913, 15.2913, 15.2913, 15.2913, 15.2913, 15.2913, 15.2913, 15.2913, 15.2913, 15.2913, 15.2913, 15.2913, 15.2913, 15.2913, 33.0092, 20.3761, 20.3761, 10.4983, 10.4983, -2.60905, -2.60905 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("arm_right:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.8, 0.9, 1.6, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.5, 3.7, 3.9, 4.1, 4.4, 4.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9.08028, -10.1503 ), Vector2( 11.8556, -10.7099 ), Vector2( -2.12427, -10.2895 ), Vector2( 8.1767, -1.46004 ), Vector2( 2.60577, -3.56229 ), Vector2( 3.34155, -9.44856 ), Vector2( 8.49204, -6.71565 ), Vector2( 5.65402, -2.30094 ), Vector2( 3.34155, -9.44856 ), Vector2( 8.49204, -6.71565 ), Vector2( 5.65402, -2.30094 ), Vector2( 3.34155, -9.44856 ), Vector2( 8.49204, -6.71565 ), Vector2( 5.65402, -2.30094 ), Vector2( 11.0147, 4.21601 ), Vector2( 19.0033, 0.431975 ), Vector2( 13.117, -9.44856 ), Vector2( 13.7476, -8.923 ), Vector2( 13.8359, -10.2156 ), Vector2( 8.38132, -5.58497 ), Vector2( 11.5376, -6.15885 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("arm_right:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.8, 0.9, 1.6, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.5, 3.9, 4.1, 4.4, 4.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -11.4971, -11.4971, -11.4971, 35.5559, 35.5559, 35.5559, 35.5559, 35.5559, 35.5559, 35.5559, 35.5559, 35.5559, 35.5559, 35.5559, 35.5559, 17.0889, 11.9909, 11.9909, -9.00297, 0.0 ]
+}

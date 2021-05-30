@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://asset/ui/background/bg.png" type="Texture" id=1]
+[ext_resource path="res://asset/military/logo/logo_ui.tscn" type="PackedScene" id=2]
+[ext_resource path="res://asset/menu/colony_menu/colony_item/colony_item.gd" type="Script" id=3]
+[ext_resource path="res://addons/Godot-Touch-Input-Manager/InputManager.gd" type="Script" id=4]
+[ext_resource path="res://asset/ui/mini_map/panel_woodDetail_blank.png" type="Texture" id=5]
+
+[node name="colony_item" type="MarginContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 120, 120 )
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 120.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 100, 100 )
+mouse_filter = 2
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="logo_ui" parent="." instance=ExtResource( 2 )]
+margin_right = 120.0
+margin_bottom = 120.0
+mouse_filter = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.792157 )
+margin_right = 120.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 100, 100 )
+mouse_filter = 2
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="input_detection" type="Node" parent="."]
+script = ExtResource( 4 )
+[connection signal="gui_input" from="logo_ui" to="." method="_on_logo_ui_gui_input"]
+[connection signal="any_gesture" from="input_detection" to="." method="_on_input_detection_any_gesture"]

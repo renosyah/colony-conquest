@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cash.wav-7a65e8ce2f1f4b77acaacc041483e847.sample"
+
+[deps]
+
+source_file="res://asset/sound/cash.wav"
+dest_files=[ "res://.import/cash.wav-7a65e8ce2f1f4b77acaacc041483e847.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

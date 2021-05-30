@@ -1,0 +1,122 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://asset/ui/fonts/montserrat_eb_16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://asset/ui/building_info_icon_item/building_info_icon_item.gd" type="Script" id=2]
+[ext_resource path="res://asset/ui/buildings/fix_balista.png" type="Texture" id=3]
+
+[node name="building_info_icon_item" type="PanelContainer"]
+margin_right = 597.0
+margin_bottom = 421.0
+rect_min_size = Vector2( 300, 0 )
+mouse_filter = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 590.0
+margin_bottom = 414.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 583.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 583.0
+margin_bottom = 363.0
+rect_min_size = Vector2( 0, 150 )
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 20.0
+margin_bottom = 339.0
+rect_min_size = Vector2( 20, 0 )
+mouse_filter = 2
+
+[node name="icon" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_left = 24.0
+margin_right = 147.0
+margin_bottom = 339.0
+rect_min_size = Vector2( 123, 150 )
+mouse_filter = 2
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 151.0
+margin_right = 171.0
+margin_bottom = 339.0
+rect_min_size = Vector2( 20, 0 )
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 175.0
+margin_right = 559.0
+margin_bottom = 339.0
+rect_min_size = Vector2( 150, 0 )
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="building_name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 384.0
+margin_bottom = 121.0
+custom_fonts/font = ExtResource( 1 )
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+autowrap = true
+
+[node name="building_description" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 125.0
+margin_right = 384.0
+margin_bottom = 156.0
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+autowrap = true
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 160.0
+margin_right = 384.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 20, 10 )
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 174.0
+margin_right = 384.0
+margin_bottom = 205.0
+text = "Upgrade : 
+"
+autowrap = true
+
+[node name="text_description_template" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+margin_top = 143.0
+margin_right = 150.0
+margin_bottom = 157.0
+text = "+ 1 to all melee"
+autowrap = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 563.0
+margin_right = 583.0
+margin_bottom = 339.0
+rect_min_size = Vector2( 20, 0 )
+mouse_filter = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 367.0
+margin_right = 583.0
+margin_bottom = 407.0
+rect_min_size = Vector2( 0, 40 )
+mouse_filter = 2

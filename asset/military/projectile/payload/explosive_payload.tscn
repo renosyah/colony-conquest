@@ -1,0 +1,67 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://asset/military/projectile/payload/3.png" type="Texture" id=1]
+[ext_resource path="res://asset/military/projectile/payload/5.png" type="Texture" id=2]
+[ext_resource path="res://asset/military/projectile/payload/8.png" type="Texture" id=3]
+[ext_resource path="res://asset/military/projectile/payload/10.png" type="Texture" id=4]
+[ext_resource path="res://asset/military/projectile/payload/4.png" type="Texture" id=5]
+[ext_resource path="res://asset/military/projectile/payload/14.png" type="Texture" id=6]
+[ext_resource path="res://asset/military/projectile/payload/2.png" type="Texture" id=7]
+[ext_resource path="res://asset/military/projectile/payload/explosive_payload.gd" type="Script" id=8]
+[ext_resource path="res://asset/military/projectile/payload/12.png" type="Texture" id=9]
+[ext_resource path="res://asset/military/projectile/payload/7.png" type="Texture" id=10]
+[ext_resource path="res://asset/military/projectile/payload/9.png" type="Texture" id=11]
+[ext_resource path="res://asset/military/projectile/payload/11.png" type="Texture" id=12]
+[ext_resource path="res://asset/military/projectile/payload/1.png" type="Texture" id=13]
+[ext_resource path="res://asset/military/projectile/payload/6.png" type="Texture" id=14]
+[ext_resource path="res://asset/military/projectile/payload/13.png" type="Texture" id=15]
+
+[sub_resource type="Animation" id=1]
+resource_name = "explode"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ null, ExtResource( 13 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 15 ), ExtResource( 6 ), null ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
+}
+
+[node name="explosive_payload" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "explode"
+playback_speed = 3.0
+anims/explode = SubResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = "sfx"
+
+[node name="life_time" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="timeout" from="life_time" to="." method="_on_life_time_timeout"]

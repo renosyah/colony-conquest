@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stab2.wav-3944539e0b5d14697ea8870a585e31be.sample"
+
+[deps]
+
+source_file="res://asset/sound/stab2.wav"
+dest_files=[ "res://.import/stab2.wav-3944539e0b5d14697ea8870a585e31be.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

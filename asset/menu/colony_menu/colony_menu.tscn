@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/admob-lib/admob.gd" type="Script" id=1]
+[ext_resource path="res://asset/map/map.tscn" type="PackedScene" id=3]
+[ext_resource path="res://asset/util/mobile_camera.gd" type="Script" id=4]
+[ext_resource path="res://asset/ui/loading/loading.tscn" type="PackedScene" id=5]
+[ext_resource path="res://asset/menu/colony_menu/colony_menu.gd" type="Script" id=6]
+[ext_resource path="res://asset/menu/colony_menu/colony_menu_ui/colony_menu_ui.tscn" type="PackedScene" id=7]
+
+[node name="colony_menu" type="Node"]
+script = ExtResource( 6 )
+
+[node name="adds" type="Node" parent="."]
+script = ExtResource( 1 )
+is_real = true
+banner_id = "ca-app-pub-3940256099942544/6300978111"
+interstitial_id = "ca-app-pub-3940256099942544/1033173712"
+rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+
+[node name="map" parent="." instance=ExtResource( 3 )]
+
+[node name="farm_holder" type="Node2D" parent="."]
+
+[node name="fort_holder" type="Node2D" parent="."]
+
+[node name="env_holder" type="Node2D" parent="."]
+
+[node name="flag_holder" type="Node2D" parent="."]
+
+[node name="cloud_holder" type="Node2D" parent="."]
+
+[node name="bandit_attack" type="Node2D" parent="."]
+
+[node name="bandit_attack_timeout" type="Timer" parent="bandit_attack"]
+wait_time = 5.0
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+volume_db = 5.0
+bus = "sfx"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+volume_db = 5.0
+bus = "music"
+
+[node name="colony_menu" parent="." instance=ExtResource( 7 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+script = ExtResource( 4 )
+
+[node name="loading" parent="Camera2D" instance=ExtResource( 5 )]
+
+[node name="cloud" type="Node2D" parent="Camera2D"]
+
+[node name="cloud_spawn_point" type="Position2D" parent="Camera2D/cloud"]
+position = Vector2( 1605.06, 3.32196 )
+
+[node name="cloud_spawn_point2" type="Position2D" parent="Camera2D/cloud"]
+position = Vector2( -1554.55, -6.11597 )
+
+[node name="cloud_spawn_timer" type="Timer" parent="Camera2D/cloud"]
+wait_time = 5.0
+autostart = true
+[connection signal="rewarded" from="adds" to="." method="_on_adds_rewarded"]
+[connection signal="on_regions_generated" from="map" to="." method="_on_map_on_regions_generated"]
+[connection signal="timeout" from="bandit_attack/bandit_attack_timeout" to="." method="_on_bandit_attack_timeout_timeout"]
+[connection signal="on_back_button_click" from="colony_menu" to="." method="_on_colony_menu_on_back_button_click"]
+[connection signal="on_battle_setting_set" from="colony_menu" to="." method="_on_colony_menu_on_battle_setting_set"]
+[connection signal="on_colony_item_click" from="colony_menu" to="." method="_on_colony_menu_on_colony_item_click"]
+[connection signal="on_randomize_button_click" from="colony_menu" to="." method="_on_colony_menu_on_randomize_button_click"]
+[connection signal="on_start_battle_button_click" from="colony_menu" to="." method="_on_colony_menu_on_start_battle_button_click"]
+[connection signal="on_camera_moving" from="Camera2D" to="." method="_on_Camera2D_on_camera_moving"]
+[connection signal="on_loading_finish" from="Camera2D/loading" to="." method="_on_loading_on_loading_finish"]
+[connection signal="timeout" from="Camera2D/cloud/cloud_spawn_timer" to="." method="_on_cloud_spawn_timer_timeout"]

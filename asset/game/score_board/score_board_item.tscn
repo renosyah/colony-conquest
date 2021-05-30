@@ -1,0 +1,141 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://asset/ui/fonts/montserrat_eb_16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://asset/ui/background/bg.png" type="Texture" id=2]
+[ext_resource path="res://asset/game/score_board/score_board_item.gd" type="Script" id=3]
+[ext_resource path="res://asset/military/logo/logo_ui.tscn" type="PackedScene" id=4]
+
+[node name="HBoxContainer" type="VBoxContainer"]
+anchor_right = 1.0
+margin_bottom = 238.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 600.0
+margin_bottom = 214.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 593.0
+margin_bottom = 207.0
+rect_min_size = Vector2( 0, 200 )
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer"]
+margin_right = 279.0
+margin_bottom = 200.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_right = 137.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 80, 80 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+
+[node name="logo_ui" parent="PanelContainer/HBoxContainer/VBoxContainer/TextureRect" instance=ExtResource( 4 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_left = 141.0
+margin_right = 279.0
+margin_bottom = 200.0
+size_flags_horizontal = 7
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "colony name"
+autowrap = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/HBoxContainer"]
+margin_left = 283.0
+margin_right = 303.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 20, 20 )
+mouse_filter = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+margin_left = 307.0
+margin_right = 586.0
+margin_bottom = 200.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="Label1" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 279.0
+margin_bottom = 28.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Troop train : 365"
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 32.0
+margin_right = 279.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 10 )
+mouse_filter = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 46.0
+margin_right = 279.0
+margin_bottom = 74.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Enemy Killed : 134"
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 78.0
+margin_right = 279.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 0, 10 )
+mouse_filter = 2
+
+[node name="Label3" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 92.0
+margin_right = 279.0
+margin_bottom = 120.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Troop Lost : 90"
+valign = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 124.0
+margin_right = 279.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 0, 10 )
+mouse_filter = 2
+
+[node name="Label4" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 138.0
+margin_right = 279.0
+margin_bottom = 166.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Logistic : 200"
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_top = 218.0
+margin_right = 600.0
+margin_bottom = 223.0
+rect_min_size = Vector2( 0, 5 )
+mouse_filter = 2
