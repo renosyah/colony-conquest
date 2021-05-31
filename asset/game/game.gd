@@ -243,8 +243,18 @@ func _process(delta):
 func _on_income(owner_id,amount):
 	if !players.has(owner_id):
 		return
+	
+	var total_amount = amount
+	
+	# for hard dofficulty
+	# AI will get double or quaddruple amount
+	if owner_id != GlobalConst.ID_PLAYER:
+		if battle_setting.dificulty == GlobalConst.DIFFICULTY_HARD:
+			total_amount *= 4.0
+		elif battle_setting.dificulty == GlobalConst.DIFFICULTY_LEGENDARY:
+			total_amount *= 8.0
 		
-	players[owner_id].logistic += amount
+	players[owner_id].logistic += total_amount
 	_ui.display_resources_info(get_resources_info(GlobalConst.ID_PLAYER),players[GlobalConst.ID_PLAYER].color)
 	
 func _on_ready_to_train_troop(fort, troop_to_train):

@@ -33,6 +33,7 @@ __meta__ = {
 }
 
 [node name="choose_colony_layout" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -243,7 +244,7 @@ scroll_vertical_enabled = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/choose_colony_layout/VBoxContainer/short_description/VBoxContainer/scroll_colony"]
 margin_right = 604.0
-margin_bottom = 128.0
+margin_bottom = 140.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -621,7 +622,6 @@ margin_bottom = 926.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="battle_setting_layout" type="VBoxContainer" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
@@ -905,10 +905,104 @@ margin_right = 586.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 0 )
 
-[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="MarginContainer7" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 430.0
 margin_right = 586.0
-margin_bottom = 550.0
+margin_bottom = 470.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 474.0
+margin_right = 586.0
+margin_bottom = 514.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 50.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 54.0
+margin_right = 532.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 8 )
+text = "Difficulty"
+autowrap = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 536.0
+margin_right = 586.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="MarginContainer8" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 518.0
+margin_right = 586.0
+margin_bottom = 558.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 562.0
+margin_right = 586.0
+margin_bottom = 642.0
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+margin_right = 50.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="normal_button" type="Button" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+margin_left = 54.0
+margin_right = 194.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = " Normal "
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+margin_left = 198.0
+margin_right = 208.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="hard_button" type="Button" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+margin_left = 212.0
+margin_right = 352.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = " Hard "
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+margin_left = 356.0
+margin_right = 366.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="legendary_button" type="Button" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+margin_left = 370.0
+margin_right = 532.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = " Legendary "
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+margin_left = 536.0
+margin_right = 586.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 646.0
+margin_right = 586.0
+margin_bottom = 766.0
 rect_min_size = Vector2( 0, 120 )
 
 [node name="go_to_battle_button" type="Button" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer"]
@@ -933,5 +1027,8 @@ visible = false
 [connection signal="value_changed" from="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6/hostile_bot_slider" to="." method="_on_hostile_bot_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7/neutral_bot_slider" to="." method="_on_neutral_bot_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8/logistic_slider" to="." method="_on_logistic_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/normal_button" to="." method="_on_normal_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/hard_button" to="." method="_on_hard_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/legendary_button" to="." method="_on_legendary_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/go_to_battle_button" to="." method="_on_go_to_battle_button_pressed"]
 [connection signal="on_setting_close_button_press" from="CanvasLayer/setting_menu" to="." method="_on_setting_menu_on_setting_close_button_press"]

@@ -1,6 +1,10 @@
 extends Node
 class_name GlobalConst
 
+# difficulty
+const DIFFICULTY_NORMAL = 0
+const DIFFICULTY_HARD = 1
+const DIFFICULTY_LEGENDARY = 2
 
 # ids
 const ID_PLAYER = "PLAYER-ID"

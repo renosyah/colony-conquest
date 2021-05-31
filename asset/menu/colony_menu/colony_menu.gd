@@ -38,6 +38,7 @@ var battle_setting = {
 	max_tree = 4,
 	max_tower = 2,
 	starting_logistic = 550.0,
+	difficulty = GlobalConst.DIFFICULTY_NORMAL
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -369,10 +370,11 @@ func _on_adds_rewarded(currency, ammount):
 	get_tree().reload_current_scene()
 	
 	
-func _on_colony_menu_on_battle_setting_set(max_bot, max_neutral_bot, starting_logistic):
+func _on_colony_menu_on_battle_setting_set(max_bot, max_neutral_bot, starting_logistic,dificulty):
 	battle_setting.max_bot = max_bot
 	battle_setting.max_neutral_bot = max_neutral_bot
 	battle_setting.starting_logistic = starting_logistic
+	battle_setting.dificulty = dificulty
 	
 	
 	
