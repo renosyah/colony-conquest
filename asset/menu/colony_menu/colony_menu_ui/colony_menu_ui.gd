@@ -49,8 +49,8 @@ onready var _setting_menu = $CanvasLayer/setting_menu
 
 var player = {}
 
-var max_bot = 3
-var max_neutral_bot = 4
+var max_bot = 2
+var max_neutral_bot = 3
 var starting_logistic = 550.0
 var dificulty = GlobalConst.NORMAL
 

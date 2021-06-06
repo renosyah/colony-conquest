@@ -454,3 +454,11 @@ func display_attack_chatter():
 		chatter.speed = 120
 		chatter.label_scale = Vector2(0.5,0.5)
 		add_child(chatter)
+
+
+func _on_VisibilityNotifier2D_screen_entered():
+	visible = true
+	
+	
+func _on_VisibilityNotifier2D_screen_exited():
+	visible = false

@@ -33,6 +33,7 @@ __meta__ = {
 }
 
 [node name="choose_colony_layout" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -243,7 +244,7 @@ scroll_vertical_enabled = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/choose_colony_layout/VBoxContainer/short_description/VBoxContainer/scroll_colony"]
 margin_right = 604.0
-margin_bottom = 128.0
+margin_bottom = 140.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -621,7 +622,6 @@ margin_bottom = 926.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="battle_setting_layout" type="VBoxContainer" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
@@ -777,8 +777,8 @@ rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
 min_value = 1.0
-max_value = 5.0
-value = 3.0
+max_value = 3.0
+value = 2.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
 margin_left = 536.0
@@ -819,9 +819,9 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
-min_value = 1.0
-max_value = 7.0
-value = 4.0
+min_value = 2.0
+max_value = 4.0
+value = 3.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
 margin_left = 536.0
