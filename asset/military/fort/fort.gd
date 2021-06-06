@@ -89,10 +89,10 @@ var _data = {
 func _ready():
 	randomize()
 	MINIMAP_COLOR = color
-	_data.max_troop = int(rand_range(6,15))
+	_data.max_troop = int(rand_range(8,18))
 	_data.maximum_building = int(rand_range(2,4))
 	_sprite.texture = preload("res://asset/military/fort/wooded_fort.png")
-	if _data.max_troop >= 10:
+	if _data.max_troop >= 12:
 		_sprite.texture = preload("res://asset/military/fort/castle.png")
 		
 	_training_time.wait_time = 1
@@ -162,7 +162,11 @@ func _process(delta):
 			delay = 0.1
 		_shot_delay.wait_time = delay
 		_shot_delay.start()
-	
+		
+		if _target.data.side == owner_id:
+			_target = null
+		
+		
 	if current_training_troop:
 		emit_signal("on_progress_training_troop", self , current_training_troop, _training_time.time_left)
 		
@@ -201,6 +205,20 @@ func highlight(is_show,color):
 	if is_show:
 		_animation.play()
 		
+func instant_set_fort_ownership(new_owner_id : String, new_owner_color : Color,new_owner_logo : Dictionary):
+	owner_id = new_owner_id
+	color = new_owner_color
+	logo = new_owner_logo
+	MINIMAP_COLOR = color
+	refresh_fort()
+	region.update_ownership(owner_id,color)
+	clear_non_garrison()
+	instant_spawn_garrison()
+	set_fort_property_owner()
+
+func refresh_fort():
+	_flag.set_appearance(color,logo)
+	
 func _on_training_time_timeout():
 	
 	if current_training_troop:
@@ -691,18 +709,8 @@ func check_rebeling_condition():
 		for i in 3:
 			_spawn_burning()
 		
-		owner_id = fort_rebel_id
-		color = GlobalConst.REBEL_COLOR
-		logo = fort_rebel_logo
-		MINIMAP_COLOR = color
-		_flag.set_appearance(color,logo)
-		region.update_ownership(owner_id,color)
-		clear_non_garrison()
-		instant_spawn_garrison()
-		set_fort_property_owner()
-		
+		instant_set_fort_ownership(fort_rebel_id,GlobalConst.REBEL_COLOR,fort_rebel_logo)
 		message = "Overrun by rebel!"
-		
 		emit_signal("on_fort_captured", self, fort_rebel_id , old_owner)
 		
 	if message != "":

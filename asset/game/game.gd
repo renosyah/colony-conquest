@@ -163,6 +163,8 @@ func spawn_forts(regions):
 			mobility = rand_range(-2.5,3.0),
 			attack_delay = rand_range(-0.1,0.1),
 		})
+		
+		# default building
 		fort.add_building(FortBuilding.MILLITIA_BARRACK)
 			
 		for building in players[region.owner_id].special_buildings:
@@ -428,7 +430,19 @@ func _on_fort_captured(fort,new_owner,old_owner):
 			event_fort = fort
 			var message = fort.fort_name  + " has been rebel"
 			_ui.display_fort_rebel(message)
-		
+	
+	# for legendary difficulty
+	# all building in captured fort
+	# will be reset to only millitia barrack
+	if new_owner == GlobalConst.ID_PLAYER:
+		if battle_setting.dificulty == GlobalConst.DIFFICULTY_LEGENDARY:
+			var _buildings = fort.get_list_installed_building(FortBuilding.BUILDING_TYPE_UNIT_SPAWNER)
+			for building in _buildings:
+				fort.remove_building(building.id)
+				
+			fort.add_building(FortBuilding.MILLITIA_BARRACK)
+			
+			
 	var owned = get_number_owned_forts(GlobalConst.ID_PLAYER)
 	
 	# win condition
@@ -619,24 +633,41 @@ func _on_game_ui_on_demolish_button_press(item, building_id):
 func _on_attack_delay_timeout():
 	_bot_attack_delay_timer.wait_time = rand_range(10,15)
 	
-	var _enemy_bot_id = GlobalConst.ID_BOT + str(int(rand_range(0,battle_setting.max_bot)))
-	var _neutral_bot_id = GlobalConst.ID_REBEL + str(int(rand_range(0,battle_setting.max_neutral_bot)))
+	var _enemies_id_bot_with_forts = []
+	for i in battle_setting.max_bot:
+		if get_number_owned_forts(GlobalConst.ID_BOT + str(i)) > 0:
+			_enemies_id_bot_with_forts.append(GlobalConst.ID_BOT + str(i))
+			
+	var _neutrals_id_bot_with_forts = []
+	for i in battle_setting.max_neutral_bot:
+		if get_number_owned_forts(GlobalConst.ID_REBEL + str(i)) > 0:
+			_neutrals_id_bot_with_forts.append(GlobalConst.ID_REBEL + str(i))
 	
 	var _all_target = []
 	for key in players.keys():
-		_all_target.append(key)
-		
+		if get_number_owned_forts(key) > 0:
+			_all_target.append(key)
+				
+				
 	var _all_neutral_target = []
 	for i in battle_setting.max_neutral_bot:
-		_all_neutral_target.append(GlobalConst.ID_REBEL + str(i))
-		
-	enemy_bot_on_action(_enemy_bot_id,_all_target)
-	enemy_bot_upgrade_troop(_enemy_bot_id)
-	enemy_bot_build(_enemy_bot_id)
+		if get_number_owned_forts(GlobalConst.ID_REBEL + str(i)) > 0:
+			_all_neutral_target.append(GlobalConst.ID_REBEL + str(i))
+			
+			
+	if !_enemies_id_bot_with_forts.empty() and !_all_target.empty():
+		for _enemy_bot_id in _enemies_id_bot_with_forts:
+			enemy_bot_on_action(_enemy_bot_id,_all_target)
+			enemy_bot_upgrade_troop(_enemy_bot_id)
+			enemy_bot_build(_enemy_bot_id)
+			
+			
+	if !_neutrals_id_bot_with_forts.empty() and !_all_neutral_target.empty():
+		for _neutral_bot_id in _neutrals_id_bot_with_forts:
+			enemy_bot_on_action(_neutral_bot_id,_all_neutral_target)
+			enemy_bot_upgrade_troop(_neutral_bot_id)
+			enemy_bot_build(_neutral_bot_id)
 	
-	enemy_bot_on_action(_neutral_bot_id,_all_neutral_target)
-	enemy_bot_upgrade_troop(_neutral_bot_id)
-	enemy_bot_build(_neutral_bot_id)
 	
 func enemy_bot_build(bot_id):
 	if !players.has(bot_id):
@@ -735,7 +766,11 @@ func enemy_bot_on_action(bot_id, targets):
 		
 	for fort in _bot_selected_fort:
 		fort.regroup_garrison()
-		fort.attack_enemy_fort(_target_fort, randf() < 0.5)
+		
+		# only launching full force on normal difficulty
+		# prevent player for capturing fort easily
+		var is_full_force = (randf() < 0.5 and battle_setting.dificulty == GlobalConst.DIFFICULTY_NORMAL)
+		fort.attack_enemy_fort(_target_fort,is_full_force)
 		
 	#print("army from fort " + _bot_selected_fort.fort_name + " ("+ _bot_selected_fort.owner_id +") is moving toward fort " +_target_fort.fort_name + " ("+ _target_fort.owner_id +")")
 

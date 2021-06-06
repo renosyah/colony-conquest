@@ -36,48 +36,68 @@ __meta__ = {
 }
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 165.0
 margin_right = 600.0
-margin_bottom = 50.0
+margin_bottom = 215.0
 rect_min_size = Vector2( 0, 50 )
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 54.0
+[node name="result_title" type="Label" parent="VBoxContainer"]
+margin_top = 219.0
 margin_right = 600.0
-margin_bottom = 114.0
+margin_bottom = 279.0
 custom_fonts/font = ExtResource( 2 )
 text = "Lose"
 align = 1
 valign = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
-margin_top = 118.0
+[node name="sub_result_title" type="Label" parent="VBoxContainer"]
+margin_top = 283.0
 margin_right = 600.0
-margin_bottom = 158.0
+margin_bottom = 323.0
 custom_fonts/font = ExtResource( 1 )
 align = 1
 valign = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-visible = false
-margin_left = 200.0
-margin_top = 162.0
-margin_right = 400.0
-margin_bottom = 362.0
-rect_min_size = Vector2( 200, 200 )
+[node name="ilustration_container" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 327.0
+margin_right = 600.0
+margin_bottom = 677.0
+rect_min_size = Vector2( 0, 350 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/ilustration_container"]
+margin_right = 20.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="result_ilustration" type="TextureRect" parent="VBoxContainer/ilustration_container"]
+margin_left = 49.0
+margin_right = 549.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 500, 350 )
 size_flags_horizontal = 6
+size_flags_vertical = 3
 texture = ExtResource( 3 )
 expand = true
 
-[node name="score_board" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 162.0
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ilustration_container"]
+margin_left = 580.0
 margin_right = 600.0
-margin_bottom = 842.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="score_board" type="MarginContainer" parent="VBoxContainer"]
+visible = false
+margin_top = 366.0
+margin_right = 600.0
+margin_bottom = 970.0
 size_flags_vertical = 3
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer/score_board"]
 modulate = Color( 0, 0, 0, 0.184314 )
 margin_right = 600.0
-margin_bottom = 680.0
+margin_bottom = 604.0
 mouse_filter = 0
 texture = ExtResource( 5 )
 expand = true
@@ -87,7 +107,7 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/score_board"]
 margin_right = 600.0
-margin_bottom = 680.0
+margin_bottom = 604.0
 size_flags_horizontal = 3
 alignment = 1
 __meta__ = {
@@ -96,44 +116,59 @@ __meta__ = {
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/score_board/HBoxContainer"]
 margin_right = 20.0
-margin_bottom = 680.0
+margin_bottom = 604.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/score_board/HBoxContainer"]
 margin_left = 24.0
 margin_right = 576.0
-margin_bottom = 680.0
+margin_bottom = 604.0
 rect_min_size = Vector2( 500, 500 )
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/score_board/HBoxContainer/ScrollContainer"]
 margin_right = 552.0
-margin_bottom = 680.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/score_board/HBoxContainer"]
 margin_left = 580.0
 margin_right = 600.0
-margin_bottom = 680.0
+margin_bottom = 604.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 846.0
+margin_top = 681.0
 margin_right = 600.0
-margin_bottom = 866.0
+margin_bottom = 701.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-visible = false
-margin_top = -156.0
+margin_top = 705.0
 margin_right = 600.0
-margin_bottom = -56.0
+margin_bottom = 805.0
 alignment = 1
 
+[node name="show_score_button" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 63.0
+margin_right = 263.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 1 )
+text = "  Score "
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 267.0
+margin_right = 287.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 20, 0 )
+
 [node name="to_home_button" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 177.0
-margin_right = 422.0
+margin_left = 291.0
+margin_right = 536.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 200, 100 )
 size_flags_horizontal = 5
@@ -144,9 +179,10 @@ __meta__ = {
 }
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 870.0
+visible = false
+margin_top = 694.0
 margin_right = 600.0
-margin_bottom = 970.0
+margin_bottom = 794.0
 alignment = 1
 
 [node name="yes_button" type="Button" parent="VBoxContainer/HBoxContainer2"]
@@ -174,10 +210,11 @@ __meta__ = {
 }
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 974.0
+margin_top = 809.0
 margin_right = 600.0
-margin_bottom = 1024.0
+margin_bottom = 859.0
 rect_min_size = Vector2( 0, 50 )
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/show_score_button" to="." method="_on_show_score_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/to_home_button" to="." method="_on_to_home_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/yes_button" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/no_button" to="." method="_on_no_button_pressed"]

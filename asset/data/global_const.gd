@@ -111,9 +111,17 @@ static func get_random_fort_facilities(maximum :int = 1) -> Array:
 	return buildings
 
 const LOGISTIC_UPGRADE_BUILDINGS = [
-	FortBuilding.IMPROVE_LAND_FERTILITY,
-	FortBuilding.IMPROVE_IRRIGATION,
-	FortBuilding.IMPROVE_HARVESTING_TOOL,
+	FortBuilding.IMPROVE_LAND_FERTILITY_1,
+	FortBuilding.IMPROVE_IRRIGATION_1,
+	FortBuilding.IMPROVE_HARVESTING_TOOL_1,
+	
+	FortBuilding.IMPROVE_LAND_FERTILITY_2,
+	FortBuilding.IMPROVE_IRRIGATION_2,
+	FortBuilding.IMPROVE_HARVESTING_TOOL_2,
+	
+	FortBuilding.IMPROVE_LAND_FERTILITY_3,
+	FortBuilding.IMPROVE_IRRIGATION_3,
+	FortBuilding.IMPROVE_HARVESTING_TOOL_3,
 ]
 static func get_random_logistic_upgrade(maximum :int = 1) -> Array:
 	var buildings = []

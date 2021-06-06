@@ -848,7 +848,7 @@ const MILLITARY_MANDATORY_SERVICE = {
 	"description" : "\"No body will expect conscription soon\"",
 	"descriptions" : [
 		"+ Decrease training time by -0.3",
-		"+ Decrease all recruitmen cost by -25.0",
+		"+ Decrease all recruitmen cost by -15.0",
 	],
 	"mode" : CASTLE_UPGRADE_MODE_ADD,
 	"updates" : [{
@@ -857,15 +857,15 @@ const MILLITARY_MANDATORY_SERVICE = {
 	},
 	{
 		"attribute" : "training_fee",
-		"value" : -25.0
+		"value" : -15.0
 	}]
 }
 
 
 ################# FARM upgrade ################
 
-const IMPROVE_IRRIGATION  = {
-	"id" : "E01",
+const IMPROVE_IRRIGATION_1 = {
+	"id" : "E01-1",
 	"type" : BUILDING_TYPE_FARM_UPGRADER,
 	"name" : "Improve Irrigation",
 	"icon" : "res://asset/ui/buildings/improve_irigiation.png",
@@ -883,9 +883,47 @@ const IMPROVE_IRRIGATION  = {
 		"value" : 4.0
 	}]
 }
+const IMPROVE_IRRIGATION_2 = {
+	"id" : "E01-2",
+	"type" : BUILDING_TYPE_FARM_UPGRADER,
+	"name" : "Water Distribution",
+	"icon" : "res://asset/ui/buildings/improve_irigiation.png",
+	"description" : "\"Wow, look at these waterline\"",
+	"descriptions" : [
+		"+ Decrease harvest time by -0.6",
+		"+ 6.0 Amounts harvested",
+	],
+	"updates" : [{
+		"attribute" : "harvest_time",
+		"value" : -0.6
+	},
+	{
+		"attribute" : "amount",
+		"value" : 6.0
+	}]
+}
+const IMPROVE_IRRIGATION_3 = {
+	"id" : "E01-3",
+	"type" : BUILDING_TYPE_FARM_UPGRADER,
+	"name" : "Advance Irrigation",
+	"icon" : "res://asset/ui/buildings/improve_irigiation.png",
+	"description" : "\"Wow, look at these waterline\"",
+	"descriptions" : [
+		"+ Decrease harvest time by -0.8",
+		"+ 8.0 Amounts harvested",
+	],
+	"updates" : [{
+		"attribute" : "harvest_time",
+		"value" : -0.8
+	},
+	{
+		"attribute" : "amount",
+		"value" : 8.0
+	}]
+}
 
-const IMPROVE_LAND_FERTILITY  = {
-	"id" : "E02",
+const IMPROVE_LAND_FERTILITY_1 = {
+	"id" : "E02-1",
 	"type" : BUILDING_TYPE_FARM_UPGRADER,
 	"name" : "Improve Land Fertility",
 	"icon" : "res://asset/ui/buildings/land_fertility.png",
@@ -903,9 +941,48 @@ const IMPROVE_LAND_FERTILITY  = {
 		"value" : 8.0
 	}]
 }
+const IMPROVE_LAND_FERTILITY_2  = {
+	"id" : "E02-2",
+	"type" : BUILDING_TYPE_FARM_UPGRADER,
+	"name" : "Artificial Soil",
+	"icon" : "res://asset/ui/buildings/land_fertility.png",
+	"description" : "\"Seed, and fertilezer, hmm... neat\"",
+	"descriptions" : [
+		"+ Decrease harvest time by -0.5",
+		"+ 10.0 Amounts harvested",
+	],
+	"updates" : [{
+		"attribute" : "harvest_time",
+		"value" : -0.5
+	},
+	{
+		"attribute" : "amount",
+		"value" : 10.0
+	}]
+}
+const IMPROVE_LAND_FERTILITY_3  = {
+	"id" : "E02-3",
+	"type" : BUILDING_TYPE_FARM_UPGRADER,
+	"name" : "Advance Farming",
+	"icon" : "res://asset/ui/buildings/land_fertility.png",
+	"description" : "\"Seed, and fertilezer, hmm... neat\"",
+	"descriptions" : [
+		"+ Decrease harvest time by -0.7",
+		"+ 12.0 Amounts harvested",
+	],
+	"updates" : [{
+		"attribute" : "harvest_time",
+		"value" : -0.7
+	},
+	{
+		"attribute" : "amount",
+		"value" : 12.0
+	}]
+}
 
-const IMPROVE_HARVESTING_TOOL  = {
-	"id" : "E03",
+
+const IMPROVE_HARVESTING_TOOL_1  = {
+	"id" : "E03-1",
 	"type" : BUILDING_TYPE_FARM_UPGRADER,
 	"name" : "Improve Harvesting Tools",
 	"icon" : "res://asset/ui/buildings/harvesting_tools.png",
@@ -920,5 +997,35 @@ const IMPROVE_HARVESTING_TOOL  = {
 	}]
 }
 
+const IMPROVE_HARVESTING_TOOL_2  = {
+	"id" : "E03-2",
+	"type" : BUILDING_TYPE_FARM_UPGRADER,
+	"name" : "Mechanical Harvester",
+	"icon" : "res://asset/ui/buildings/harvesting_tools.png",
+	"description" : "\"We got new hoe, ups.. i mean new tools\"",
+	"descriptions" : [
+		"+ Decrease harvest time by -1.7",
+	],
+	"updates" : [
+	{
+		"attribute" : "harvest_time",
+		"value" : -1.7
+	}]
+}
 
+const IMPROVE_HARVESTING_TOOL_3  = {
+	"id" : "E03-3",
+	"type" : BUILDING_TYPE_FARM_UPGRADER,
+	"name" : "Advance Harvesting Tools",
+	"icon" : "res://asset/ui/buildings/harvesting_tools.png",
+	"description" : "\"We got new hoe, ups.. i mean new tools\"",
+	"descriptions" : [
+		"+ Decrease harvest time by -2.3",
+	],
+	"updates" : [
+	{
+		"attribute" : "harvest_time",
+		"value" : -2.3
+	}]
+}
 

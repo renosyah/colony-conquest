@@ -1,7 +1,7 @@
 extends VBoxContainer
 
-onready var _logo = $PanelContainer/HBoxContainer/VBoxContainer/TextureRect/logo_ui
-onready var _player_banner = $PanelContainer/HBoxContainer/VBoxContainer/TextureRect
+onready var _logo = $PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/logo_ui
+onready var _player_banner = $PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/colony_color
 onready var _name = $PanelContainer/HBoxContainer/VBoxContainer/Label
 onready var _troop_train = $PanelContainer/HBoxContainer/VBoxContainer2/Label1
 onready var _troop_kill = $PanelContainer/HBoxContainer/VBoxContainer2/Label2

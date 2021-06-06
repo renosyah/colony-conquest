@@ -321,9 +321,8 @@ func take_projectile_damage(from,dmg):
 func take_melee_damage(from,dmg):
 	attacked_by = ""
 	if from is KinematicBody2D:
-		if !target or from.target == self:
+		if target != from:
 			rally_point = null
-			target = null
 			target = from
 			set_process(true)
 			

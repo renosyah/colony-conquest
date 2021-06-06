@@ -36,9 +36,17 @@ margin_bottom = 200.0
 mouse_filter = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 margin_right = 137.0
 margin_bottom = 200.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="colony_color" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 130.0
+margin_bottom = 193.0
 rect_min_size = Vector2( 80, 80 )
 mouse_filter = 2
 size_flags_horizontal = 3
@@ -46,11 +54,11 @@ size_flags_vertical = 3
 texture = ExtResource( 2 )
 expand = true
 
-[node name="logo_ui" parent="PanelContainer/HBoxContainer/VBoxContainer/TextureRect" instance=ExtResource( 4 )]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 0.0
-margin_bottom = 0.0
+[node name="logo_ui" parent="PanelContainer/HBoxContainer/VBoxContainer/PanelContainer" instance=ExtResource( 4 )]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 130.0
+margin_bottom = 193.0
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]

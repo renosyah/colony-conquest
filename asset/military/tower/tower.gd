@@ -51,6 +51,9 @@ func _process(delta):
 		_shot_delay.wait_time = delay
 		_shot_delay.start()
 		
+		if _target.data.side == owner_id:
+			_target = null
+		
 func set_targets(_targets):
 	targets = _targets
 	
