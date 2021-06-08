@@ -370,14 +370,17 @@ func _on_adds_rewarded_video_loaded():
 	_ui.set_randomize_button_visible(true)
 	
 func _on_adds_rewarded_video_closed():
-	_adds.load_rewarded_video()
+	_ui.set_randomize_button_visible(false)
 	
 func _on_adds_rewarded_video_failed_to_load(_error_code):
 	_ui.set_randomize_button_visible(false)
 	
-func _on_adds_rewarded(currency, ammount):
+func _on_adds_rewarded(_currency, _ammount):
+	_ui.set_randomize_button_visible(true)
+	
 	var colonies = generate_new_colonies()
 	save_generated_colonies(colonies)
+	
 	get_tree().reload_current_scene()
 	
 	

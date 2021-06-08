@@ -12,10 +12,8 @@ script = ExtResource( 6 )
 
 [node name="adds" type="Node" parent="."]
 script = ExtResource( 1 )
-is_real = true
-banner_id = "ca-app-pub-3940256099942544/6300978111"
-interstitial_id = "ca-app-pub-3940256099942544/1033173712"
 rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+max_ad_content_rate = "PG"
 
 [node name="map" parent="." instance=ExtResource( 3 )]
 
@@ -63,6 +61,7 @@ position = Vector2( -1554.55, -6.11597 )
 [node name="cloud_spawn_timer" type="Timer" parent="Camera2D/cloud"]
 wait_time = 5.0
 autostart = true
+
 [connection signal="rewarded" from="adds" to="." method="_on_adds_rewarded"]
 [connection signal="rewarded_video_closed" from="adds" to="." method="_on_adds_rewarded_video_closed"]
 [connection signal="rewarded_video_failed_to_load" from="adds" to="." method="_on_adds_rewarded_video_failed_to_load"]

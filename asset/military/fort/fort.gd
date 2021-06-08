@@ -153,7 +153,7 @@ func _on_body_leave_region(body):
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if _shot_delay.is_stopped() and _target:
+	if _shot_delay.is_stopped() and is_instance_valid(_target):
 		for i in _data.max_shoter:
 			_shoot_at(_target)
 			
@@ -580,7 +580,7 @@ func check_owned_troop_number() -> int:
 	return get_troop_garrison().size()
 
 func pick_fort_target():
-	if _target:
+	if is_instance_valid(_target):
 		return
 		
 	if targets.empty():
@@ -826,9 +826,9 @@ func _spawn_burning():
 	burn.set_as_toplevel(true)
 	_burning_holder.add_child(burn)
 	
-func _shoot_at(_target):
+func _shoot_at(_troop):
 	var from = _shooting_point.global_position + Vector2(rand_range(-20,20),rand_range(-20,20))
-	var direction = (_target.global_position - global_position).normalized()
+	var direction = (_troop.global_position - _shooting_point.global_position).normalized()
 	var projectile = preload("res://asset/military/projectile/projectile.tscn").instance()
 	projectile.side = owner_id
 	projectile.damage = _data.damage

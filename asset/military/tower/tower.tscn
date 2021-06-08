@@ -65,4 +65,5 @@ texture = ExtResource( 4 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "tower_iddle"
 anims/tower_iddle = SubResource( 2 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

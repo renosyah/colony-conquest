@@ -476,6 +476,7 @@ bus = "music"
 
 [node name="input_detection" type="Node" parent="."]
 script = ExtResource( 15 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="gui_input" from="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/campaign_play" to="." method="_on_campaign_play_gui_input"]
 [connection signal="gui_input" from="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/custom_play" to="." method="_on_custom_play_gui_input"]

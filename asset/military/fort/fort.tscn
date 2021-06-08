@@ -138,6 +138,7 @@ autostart = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "fort_iddle"
 anims/fort_iddle = SubResource( 3 )
+
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
 [connection signal="timeout" from="training_time" to="." method="_on_training_time_timeout"]
 [connection signal="timeout" from="timer_fort_checking" to="." method="_on_timer_fort_checking_timeout"]
