@@ -64,6 +64,9 @@ position = Vector2( -1554.55, -6.11597 )
 wait_time = 5.0
 autostart = true
 [connection signal="rewarded" from="adds" to="." method="_on_adds_rewarded"]
+[connection signal="rewarded_video_closed" from="adds" to="." method="_on_adds_rewarded_video_closed"]
+[connection signal="rewarded_video_failed_to_load" from="adds" to="." method="_on_adds_rewarded_video_failed_to_load"]
+[connection signal="rewarded_video_loaded" from="adds" to="." method="_on_adds_rewarded_video_loaded"]
 [connection signal="on_regions_generated" from="map" to="." method="_on_map_on_regions_generated"]
 [connection signal="timeout" from="bandit_attack/bandit_attack_timeout" to="." method="_on_bandit_attack_timeout_timeout"]
 [connection signal="on_back_button_click" from="colony_menu" to="." method="_on_colony_menu_on_back_button_click"]

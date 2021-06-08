@@ -506,5 +506,11 @@ nine_patch_stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 8.74071, -2.99231 )
+scale = Vector2( 2.89776, 3.78758 )
 [connection signal="on_animation_attack_performed" from="body/weapon" to="." method="_on_weapon_on_animation_attack_performed"]
 [connection signal="timeout" from="iddle_delay" to="." method="_on_iddle_delay_timeout"]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

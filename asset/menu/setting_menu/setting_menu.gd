@@ -15,23 +15,29 @@ func _ready():
 		_setting = {sfx = -20, music = -20}
 		
 	apply_setting()
-
+	
+	
 func apply_setting():
 	_sfx_slider.value = _setting.sfx
 	_music_slider.value = _setting.music
-
+	
+	
 func save_setting():
 	if _setting:
 		_save_load.save(SaveLoad.GAME_SETTING_FILENAME,_setting)
-
+	
+	
 func _on_button_close_pressed():
 	emit_signal("on_setting_close_button_press")
-
+	
+	
 func _on_sfx_slider_value_changed(value):
 	if !_setting:
 		return
 	
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), value)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("sfx"), value < -50.0)
+		
 	_setting.sfx = value
 	save_setting()
 	
@@ -41,5 +47,11 @@ func _on_music_slider_value_changed(value):
 		return
 		
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"), value)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("music"),  value < -50.0)
+		
 	_setting.music = value
 	save_setting()
+	
+	
+	
+	

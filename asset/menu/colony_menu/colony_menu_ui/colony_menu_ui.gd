@@ -49,8 +49,8 @@ onready var _setting_menu = $CanvasLayer/setting_menu
 
 var player = {}
 
-var max_bot = 2
-var max_neutral_bot = 3
+var max_bot = 3
+var max_neutral_bot = 4
 var starting_logistic = 550.0
 var dificulty = GlobalConst.NORMAL
 
@@ -93,7 +93,12 @@ func set_player_colony(_player):
 	
 func set_visible(_visible : bool = false):
 	_choose_colony_menu.visible = _visible
-
+	
+	
+func set_randomize_button_visible(_visible : bool = false):
+	_randomize_button.visible = _visible
+	
+	
 func display_setting():
 	_max_enemy_bot_label.text = "Max Enemy ("+ str(max_bot) +") : "
 	_max_neutral_bot_label.text = "Max Neutral ("+ str(max_neutral_bot) +") : "

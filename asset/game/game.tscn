@@ -28,7 +28,7 @@ script = ExtResource( 2 )
 
 [node name="attack_delay" type="Timer" parent="bot"]
 wait_time = 5.0
-autostart = true
+one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 volume_db = 5.0

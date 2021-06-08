@@ -54,6 +54,8 @@ func _ready():
 		
 	display_colonies(colonies)
 	_adds.load_rewarded_video()
+	_ui.set_randomize_button_visible(false)
+	
 	set_process(false)
 	
 	
@@ -364,6 +366,15 @@ func _on_colony_menu_on_randomize_button_click():
 #	get_tree().change_scene("res://asset/menu/colony_menu/colony_menu.tscn")
 	
 	
+func _on_adds_rewarded_video_loaded():
+	_ui.set_randomize_button_visible(true)
+	
+func _on_adds_rewarded_video_closed():
+	_adds.load_rewarded_video()
+	
+func _on_adds_rewarded_video_failed_to_load(_error_code):
+	_ui.set_randomize_button_visible(false)
+	
 func _on_adds_rewarded(currency, ammount):
 	var colonies = generate_new_colonies()
 	save_generated_colonies(colonies)
@@ -399,4 +410,7 @@ func _on_colony_menu_on_colony_item_click(data):
 	battle_setting.players[GlobalConst.ID_PLAYER] = data
 	spawn_player_choosed_colony()
 	
+
+
+
 

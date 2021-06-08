@@ -777,7 +777,7 @@ rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
 min_value = 1.0
-max_value = 3.0
+max_value = 6.0
 value = 2.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -820,7 +820,7 @@ rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
 min_value = 2.0
-max_value = 4.0
+max_value = 8.0
 value = 3.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]

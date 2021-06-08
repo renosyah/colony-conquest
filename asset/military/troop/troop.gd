@@ -12,7 +12,7 @@ const attack_animations = [
 	"troop_attacking"
 ]
 
-const MINIMUM_RANGE_ATTACK = 100.0
+const MINIMUM_RANGE_ATTACK = 70.0
 
 
 # const
@@ -25,9 +25,15 @@ const dead_sound = [
 const combats_sound = [
 	preload("res://asset/sound/fight1.wav"),
 	preload("res://asset/sound/fight2.wav"),
+	preload("res://asset/sound/stab2.wav"),
+	preload("res://asset/sound/stab2.wav"),
 	preload("res://asset/sound/fight3.wav"),
+	preload("res://asset/sound/stab1.wav"),
 	preload("res://asset/sound/fight4.wav"),
-	preload("res://asset/sound/fight5.wav")
+	preload("res://asset/sound/stab1.wav"),
+	preload("res://asset/sound/fight5.wav"),
+	preload("res://asset/sound/stab1.wav"),
+	preload("res://asset/sound/stab2.wav"),
 ]
 const stabs_sound = [
 	preload("res://asset/sound/stab1.wav"),
@@ -235,7 +241,7 @@ func _on_weapon_on_animation_attack_performed():
 			_shoot_at(target)
 		else:
 			_play_fighting_sound()
-			target.take_melee_damage(self, _get_troop_data_melee_attack_damage())
+			target.take_melee_damage(self, data.melee_attack_damage)
 		
 	elif data["class"] == TroopData.CLASS_MELEE or data["class"] == TroopData.CLASS_NON_COMBATANT:
 		_play_fighting_sound()
@@ -419,6 +425,9 @@ func _get_damage_receive_by_projectile(dmg):
 	return _dmg
 		
 func _play_weapon_firing():
+	if not visible:
+		return
+		
 	if data.weapon.weapon_firing_sound == "":
 		return
 		
@@ -426,21 +435,33 @@ func _play_weapon_firing():
 	_audio.play()
 	
 func _play_fighting_sound():
+	if not visible:
+		return
+		
 	rng.randomize()
 	_audio.stream = combats_sound[rng.randf_range(0,combats_sound.size())]
 	_audio.play()
 	
 func _play_stab_sound():
+	if not visible:
+		return
+		
 	rng.randomize()
 	_audio.stream = stabs_sound[rng.randf_range(0,stabs_sound.size())]
 	_audio.play()
 	
 func _play_dead_sound():
+	if not visible:
+		return
+		
 	rng.randomize()
 	_audio.stream = dead_sound[rng.randf_range(0,dead_sound.size())]
 	_audio.play()
 
 func _play_ambient_sound():
+	if not visible:
+		return
+		
 	if data.has("ambient_sounds"):
 		var sound = data.ambient_sounds[rand_range(0,data.ambient_sounds.size())]
 		_audio.stream = load(sound)
@@ -454,4 +475,13 @@ func display_attack_chatter():
 		chatter.speed = 120
 		chatter.label_scale = Vector2(0.5,0.5)
 		add_child(chatter)
-
+	
+	
+	
+func _on_VisibilityNotifier2D_screen_entered():
+	visible = true
+	
+	
+func _on_VisibilityNotifier2D_screen_exited():
+	visible = false
+	

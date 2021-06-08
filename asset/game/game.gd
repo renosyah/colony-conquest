@@ -102,7 +102,20 @@ func init_game():
 	
 	_ui.set_game_ui_visible(false)
 	_ui.set_data_score(players)
+	set_bot_timmer()
+	
 	set_process(false)
+	
+	
+func set_bot_timmer():
+	var wait_time = rand_range(25,35)
+	if battle_setting.dificulty == GlobalConst.DIFFICULTY_HARD:
+		wait_time = rand_range(15,25)
+	elif battle_setting.dificulty == GlobalConst.DIFFICULTY_LEGENDARY:
+		wait_time = rand_range(10,15)
+		
+	_bot_attack_delay_timer.wait_time = wait_time
+	_bot_attack_delay_timer.start()
 
 func get_resources_info(id):
 	var fort_owned = " " + str(get_number_owned_forts(id)) +"/" + str(forts.size())
@@ -631,7 +644,7 @@ func _on_game_ui_on_demolish_button_press(item, building_id):
 		
 		
 func _on_attack_delay_timeout():
-	_bot_attack_delay_timer.wait_time = rand_range(10,15)
+	set_bot_timmer()
 	
 	var _enemies_id_bot_with_forts = []
 	for i in battle_setting.max_bot:
@@ -642,7 +655,7 @@ func _on_attack_delay_timeout():
 	for i in battle_setting.max_neutral_bot:
 		if get_number_owned_forts(GlobalConst.ID_REBEL + str(i)) > 0:
 			_neutrals_id_bot_with_forts.append(GlobalConst.ID_REBEL + str(i))
-	
+		
 	var _all_target = []
 	for key in players.keys():
 		if get_number_owned_forts(key) > 0:
@@ -656,17 +669,17 @@ func _on_attack_delay_timeout():
 			
 			
 	if !_enemies_id_bot_with_forts.empty() and !_all_target.empty():
-		for _enemy_bot_id in _enemies_id_bot_with_forts:
-			enemy_bot_on_action(_enemy_bot_id,_all_target)
-			enemy_bot_upgrade_troop(_enemy_bot_id)
-			enemy_bot_build(_enemy_bot_id)
+		var _enemy_bot_id = _enemies_id_bot_with_forts[rand_range(0,_enemies_id_bot_with_forts.size())]
+		enemy_bot_on_action(_enemy_bot_id,_all_target)
+		enemy_bot_upgrade_troop(_enemy_bot_id)
+		enemy_bot_build(_enemy_bot_id)
 			
 			
 	if !_neutrals_id_bot_with_forts.empty() and !_all_neutral_target.empty():
-		for _neutral_bot_id in _neutrals_id_bot_with_forts:
-			enemy_bot_on_action(_neutral_bot_id,_all_neutral_target)
-			enemy_bot_upgrade_troop(_neutral_bot_id)
-			enemy_bot_build(_neutral_bot_id)
+		var _neutral_bot_id = _neutrals_id_bot_with_forts[rand_range(0,_neutrals_id_bot_with_forts.size())]
+		enemy_bot_on_action(_neutral_bot_id,_all_neutral_target)
+		enemy_bot_upgrade_troop(_neutral_bot_id)
+		enemy_bot_build(_neutral_bot_id)
 	
 	
 func enemy_bot_build(bot_id):
