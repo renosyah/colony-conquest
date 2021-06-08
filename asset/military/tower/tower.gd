@@ -37,6 +37,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if targets.empty():
+		return
+		
 	if _shot_delay.is_stopped() and is_instance_valid(_target):
 		for i in _data.max_shoter:
 			_shoot_at(_target)
@@ -56,6 +59,8 @@ func set_targets(_targets):
 func pick_tower_target():
 	if is_instance_valid(_target):
 		return
+		
+	_target = null
 		
 	if targets.empty():
 		return

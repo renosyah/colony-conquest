@@ -153,6 +153,12 @@ func _on_body_leave_region(body):
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if current_training_troop:
+		emit_signal("on_progress_training_troop", self , current_training_troop, _training_time.time_left)
+		
+	if targets.empty():
+		return
+		
 	if _shot_delay.is_stopped() and is_instance_valid(_target):
 		for i in _data.max_shoter:
 			_shoot_at(_target)
@@ -165,11 +171,7 @@ func _process(delta):
 		
 		if _target.data.side == owner_id:
 			_target = null
-		
-		
-	if current_training_troop:
-		emit_signal("on_progress_training_troop", self , current_training_troop, _training_time.time_left)
-		
+	
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_action_pressed("left_click"):
 		emit_signal("on_fort_click", self, region)
@@ -582,6 +584,8 @@ func check_owned_troop_number() -> int:
 func pick_fort_target():
 	if is_instance_valid(_target):
 		return
+		
+	_target = null
 		
 	if targets.empty():
 		return
