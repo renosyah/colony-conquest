@@ -91,6 +91,7 @@ func init_game():
 		regions_owners.append(players[GlobalConst.ID_PLAYER].duplicate())
 			
 			
+	_map.biom_id = battle_setting.biom_id
 	_map.set_region_owners(regions_owners)
 	_map.make_regions()
 

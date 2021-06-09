@@ -3,7 +3,7 @@ extends Node
 signal on_randomize_button_click()
 signal on_back_button_click()
 signal on_start_battle_button_click()
-signal on_battle_setting_set(max_bot,max_neutral_bot,starting_logistic,dificulty)
+signal on_battle_setting_set(max_bot,max_neutral_bot,starting_logistic,dificulty,biom)
 signal on_colony_item_click(data)
 
 # Declare member variables here. Examples:
@@ -41,9 +41,12 @@ onready var _colony_installed_farm_upgrader_container = $CanvasLayer/choose_colo
 onready var _max_enemy_bot_label = $CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6/Label3
 onready var _max_neutral_bot_label = $CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7/Label3
 onready var _max_logistic_label = $CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8/Label3
+
 onready var _normal_diff_button = $CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/normal_button
 onready var _hard_diff_button = $CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/hard_button
 onready var _legendary_diff_button = $CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9/legendary_button
+
+onready var _map_biom_item_container = $CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5/ScrollContainer/HBoxContainer10/HBoxContainer
 
 onready var _setting_menu = $CanvasLayer/setting_menu
 
@@ -53,6 +56,7 @@ var max_bot = 3
 var max_neutral_bot = 4
 var starting_logistic = 550.0
 var dificulty = GlobalConst.NORMAL
+var biom_id = Biom.GRASS_LAND
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -61,6 +65,7 @@ func _ready():
 	_setting_menu.visible = false
 	_on_button_close_info_pressed()
 	_on_normal_button_pressed()
+	show_map_biom_item_container()
 	display_setting()
 	
 func set_colony_list(_colony_list):
@@ -162,6 +167,18 @@ func set_all_difficulty_button_color(color):
 	_hard_diff_button.modulate = color
 	_legendary_diff_button.modulate = color
 
+
+func show_map_biom_item_container():
+	for child in _map_biom_item_container.get_children():
+		_map_biom_item_container.remove_child(child)
+		
+	for biom in Biom.BIOMS:
+		var item = preload("res://asset/ui/map_chooser_item/map_choose_item.tscn").instance()
+		item.biom = biom
+		item.is_choosed = (biom.id == biom_id)
+		item.connect("on_map_item_click", self, "_on_map_item_click")
+		_map_biom_item_container.add_child(item)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -198,22 +215,22 @@ func _on_next_button_pressed():
 	_bg.visible = true
 	_battle_setting_layout.visible = true
 	_choose_colony_menu.visible = false
-	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty)
+	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty,biom_id)
 	
 func _on_hostile_bot_slider_value_changed(value):
 	max_bot = value
 	display_setting()
-	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty)
+	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty,biom_id)
 
 func _on_neutral_bot_slider_value_changed(value):
 	max_neutral_bot = value
 	display_setting()
-	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty)
+	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty,biom_id)
 	
 func _on_logistic_slider_value_changed(value):
 	starting_logistic = value
 	display_setting()
-	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty)
+	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty,biom_id)
 
 func _on_go_to_battle_button_pressed():
 	emit_signal("on_start_battle_button_click")
@@ -237,17 +254,26 @@ func _on_normal_button_pressed():
 	set_all_difficulty_button_color(Color.white)
 	_normal_diff_button.modulate = Color.gray
 	dificulty = GlobalConst.DIFFICULTY_NORMAL
-	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty)
+	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty,biom_id)
 
 func _on_hard_button_pressed():
 	set_all_difficulty_button_color(Color.white)
 	_hard_diff_button.modulate = Color.gray
 	dificulty = GlobalConst.DIFFICULTY_HARD
-	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty)
+	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty,biom_id)
 	
 func _on_legendary_button_pressed():
 	set_all_difficulty_button_color(Color.white)
 	_legendary_diff_button.modulate = Color.gray
 	dificulty = GlobalConst.DIFFICULTY_LEGENDARY
-	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty)
+	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty,biom_id)
+	
+	
+func _on_map_item_click(biom):
+	biom_id = biom.id
+	show_map_biom_item_container()
+	emit_signal("on_battle_setting_set",max_bot,max_neutral_bot,starting_logistic,dificulty,biom_id)
+	
+	
+	
 	

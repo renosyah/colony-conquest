@@ -14,11 +14,11 @@ const BIOMS = [
 		"name" : "Grass Land",
 		"sprite" : "res://asset/ui/map_biom/grass_land.png"
 	},
-	{
-		"id" : WET_LAND,
-		"name" : "Wet Land",
-		"sprite" : "res://asset/ui/map_biom/wet_land.png"
-	},
+#	{
+#		"id" : WET_LAND,
+#		"name" : "Wet Land",
+#		"sprite" : "res://asset/ui/map_biom/wet_land.png"
+#	},
 	{
 		"id" : MUD_LAND,
 		"name" : "Mud Land",
@@ -32,8 +32,8 @@ const BIOMS = [
 	{
 		"id" : SAND_LAND,
 		"name" : "Sand Land",
-		"sprite" : "res://asset/ui/map_biom/urban_land.png"
-	}
+		"sprite" : "res://asset/ui/map_biom/sand_land.png"
+	},
 ]
 const TILE_ID = {
 	'grass' : 0,

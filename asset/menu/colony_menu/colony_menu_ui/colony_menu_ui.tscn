@@ -704,8 +704,8 @@ size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer"]
-margin_right = 586.0
-margin_bottom = 782.0
+margin_right = 574.0
+margin_bottom = 1272.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -713,13 +713,13 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 24.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 64.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -729,7 +729,7 @@ rect_min_size = Vector2( 50, 0 )
 
 [node name="Label2" type="Label" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
 margin_left = 54.0
-margin_right = 532.0
+margin_right = 520.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -738,20 +738,20 @@ text = "Enemy"
 autowrap = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
-margin_left = 536.0
-margin_right = 586.0
+margin_left = 524.0
+margin_right = 574.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 68.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 108.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 112.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 162.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
@@ -771,7 +771,7 @@ autowrap = true
 
 [node name="hostile_bot_slider" type="HSlider" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
 margin_left = 288.0
-margin_right = 532.0
+margin_right = 520.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
@@ -781,20 +781,20 @@ max_value = 6.0
 value = 2.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
-margin_left = 536.0
-margin_right = 586.0
+margin_left = 524.0
+margin_right = 574.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 166.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 186.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 190.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 240.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -814,7 +814,7 @@ autowrap = true
 
 [node name="neutral_bot_slider" type="HSlider" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
 margin_left = 288.0
-margin_right = 532.0
+margin_right = 520.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
@@ -824,20 +824,20 @@ max_value = 8.0
 value = 3.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
-margin_left = 536.0
-margin_right = 586.0
+margin_left = 524.0
+margin_right = 574.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="MarginContainer6" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 244.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 284.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 288.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 328.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
@@ -847,7 +847,7 @@ rect_min_size = Vector2( 50, 0 )
 
 [node name="Label2" type="Label" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 54.0
-margin_right = 532.0
+margin_right = 520.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -856,20 +856,20 @@ text = "Resources"
 autowrap = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 536.0
-margin_right = 586.0
+margin_left = 524.0
+margin_right = 574.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="MarginContainer5" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 332.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 372.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 376.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 426.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -889,7 +889,7 @@ autowrap = true
 
 [node name="logistic_slider" type="HSlider" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8"]
 margin_left = 278.0
-margin_right = 532.0
+margin_right = 520.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
@@ -900,20 +900,20 @@ step = 50.0
 value = 500.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8"]
-margin_left = 536.0
-margin_right = 586.0
+margin_left = 524.0
+margin_right = 574.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="MarginContainer7" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 430.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 470.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 474.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 514.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -923,7 +923,7 @@ rect_min_size = Vector2( 50, 0 )
 
 [node name="Label2" type="Label" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
 margin_left = 54.0
-margin_right = 532.0
+margin_right = 520.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -932,20 +932,20 @@ text = "Difficulty"
 autowrap = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 536.0
-margin_right = 586.0
+margin_left = 524.0
+margin_right = 574.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="MarginContainer8" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 518.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 558.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="HBoxContainer9" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 562.0
-margin_right = 586.0
+margin_right = 574.0
 margin_bottom = 642.0
 alignment = 1
 
@@ -956,7 +956,7 @@ rect_min_size = Vector2( 50, 0 )
 
 [node name="normal_button" type="Button" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
 margin_left = 54.0
-margin_right = 194.0
+margin_right = 188.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
@@ -964,14 +964,14 @@ custom_fonts/font = ExtResource( 1 )
 text = " Normal "
 
 [node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
-margin_left = 198.0
-margin_right = 208.0
+margin_left = 192.0
+margin_right = 202.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 10, 0 )
 
 [node name="hard_button" type="Button" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
-margin_left = 212.0
-margin_right = 352.0
+margin_left = 206.0
+margin_right = 340.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
@@ -979,14 +979,14 @@ custom_fonts/font = ExtResource( 1 )
 text = " Hard "
 
 [node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
-margin_left = 356.0
-margin_right = 366.0
+margin_left = 344.0
+margin_right = 354.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 10, 0 )
 
 [node name="legendary_button" type="Button" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
-margin_left = 370.0
-margin_right = 532.0
+margin_left = 358.0
+margin_right = 520.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
@@ -994,16 +994,91 @@ custom_fonts/font = ExtResource( 1 )
 text = " Legendary "
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
-margin_left = 536.0
-margin_right = 586.0
+margin_left = 524.0
+margin_right = 574.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 50, 0 )
 
-[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="MarginContainer10" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 margin_top = 646.0
-margin_right = 586.0
-margin_bottom = 766.0
-rect_min_size = Vector2( 0, 120 )
+margin_right = 574.0
+margin_bottom = 686.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 690.0
+margin_right = 574.0
+margin_bottom = 730.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+margin_right = 50.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Label2" type="Label" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 54.0
+margin_right = 520.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 8 )
+text = "Map"
+autowrap = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 524.0
+margin_right = 574.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="MarginContainer9" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 734.0
+margin_right = 574.0
+margin_bottom = 774.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 778.0
+margin_right = 574.0
+margin_bottom = 918.0
+mouse_filter = 2
+
+[node name="MarginContainer11" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+margin_right = 50.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 50, 0 )
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+margin_left = 54.0
+margin_right = 574.0
+margin_bottom = 140.0
+size_flags_horizontal = 3
+scroll_vertical_enabled = false
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5/ScrollContainer"]
+margin_right = 254.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 0, 140 )
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5/ScrollContainer/HBoxContainer10"]
+margin_bottom = 140.0
+mouse_filter = 2
+
+[node name="MarginContainer11" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5/ScrollContainer/HBoxContainer10"]
+margin_left = 4.0
+margin_right = 254.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 250, 0 )
+mouse_filter = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 922.0
+margin_right = 574.0
+margin_bottom = 1272.0
+rect_min_size = Vector2( 0, 350 )
+mouse_filter = 2
 
 [node name="go_to_battle_button" type="Button" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer"]
 margin_top = 890.0
@@ -1017,6 +1092,7 @@ expand_icon = true
 
 [node name="setting_menu" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false
+
 [connection signal="pressed" from="CanvasLayer/choose_colony_layout/MarginContainer/HBoxContainer/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/choose_colony_layout/MarginContainer/HBoxContainer/button_setting" to="." method="_on_button_setting_pressed"]
 [connection signal="pressed" from="CanvasLayer/choose_colony_layout/VBoxContainer/short_description/VBoxContainer/HBoxContainer/colony_info_button" to="." method="_on_colony_info_button_pressed"]

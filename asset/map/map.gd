@@ -13,6 +13,7 @@ var min_size = 14
 var max_size = 18
 var hspread = 650
 var vspread = 350
+var biom_id = Biom.BIOMS[rand_range(0, Biom.BIOMS.size())].id
 
 var region_owners = []
 
@@ -68,12 +69,12 @@ func make_map():
 	var bottomright = _world_map.get_world_to_map(full_rect.end)
 
 	# fill with dirt/grass/etc
-	var filled_tile = Biom.SOLID_TILE_ID.values()[rand_range(0,Biom.SOLID_TILE_ID.size())]
-	for x in range(topleft.x - 20, bottomright.x + 30):
-		for y in range(topleft.y - 20, bottomright.y + 30):
-			_world_map.set_cell_at(x, y, filled_tile)
+#	var filled_tile = Biom.SOLID_TILE_ID.values()[rand_range(0,Biom.SOLID_TILE_ID.size())]
+#	for x in range(topleft.x - 20, bottomright.x + 30):
+#		for y in range(topleft.y - 20, bottomright.y + 30):
+#			_world_map.set_cell_at(x, y, filled_tile)
 	
-#	_world_map.generate_battlefield(Biom.BIOMS[rand_range(0, Biom.BIOMS.size())].id,topleft,bottomright)
+	_world_map.generate_battlefield(biom_id,topleft,bottomright)
 	
 	# fill with terrain
 	var corridors = []  # One corridor per connection
@@ -82,7 +83,7 @@ func make_map():
 		var pos = _world_map.get_world_to_map(room.position)
 		var ul = (room.position / tile_size).floor() - s
 		var room_size = room.get_shape().shape.extents / 24
-		_world_map.generate_tilemap_at(ul, room_size, Biom.BIOMS[rand_range(0, Biom.BIOMS.size())].id)
+		#_world_map.generate_tilemap_at(ul, room_size, Biom.BIOMS[rand_range(0, Biom.BIOMS.size())].id)
 		
 		# Carve connecting corridor
 		var p = path.get_closest_point(Vector3(room.position.x,  room.position.y, 0))
