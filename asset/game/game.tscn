@@ -58,6 +58,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="game_ui" parent="." instance=ExtResource( 5 )]
+
 [connection signal="on_regions_generated" from="map" to="." method="_on_map_on_regions_generated"]
 [connection signal="timeout" from="bot/attack_delay" to="." method="_on_attack_delay_timeout"]
 [connection signal="on_camera_moving" from="Camera2D" to="." method="_on_Camera2D_on_camera_moving"]

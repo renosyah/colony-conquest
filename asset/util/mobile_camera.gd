@@ -2,6 +2,7 @@ extends Camera2D
 
 signal on_camera_moving( _pos, _zoom)
 
+var achor_is_set = false
 var center_anchor
 var max_distance_from_achor = 750.0
 
@@ -16,18 +17,19 @@ var enable = false
 var drag_speed = 200.0
 
 func set_anchor(pos : Vector2, max_dis : float = 750.0):
+	achor_is_set = true
 	center_anchor = pos
 	max_distance_from_achor = max_dis
 	
 func _process(delta):
 	if !enable:
 		return
-	
+		
 	var velocity = Vector2.ZERO
 	velocity.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	velocity.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up") 
 	
-	if center_anchor:
+	if achor_is_set:
 		var distance_to_anchor = (global_position + velocity * delta * 1250).distance_to(center_anchor)
 		if distance_to_anchor > max_distance_from_achor:
 			return
@@ -41,9 +43,10 @@ func parsing_input(event):
 func _unhandled_input(event):
 	if !enable:
 		return
-	
-	smoothing_enabled = false
-	
+		
+	if smoothing_enabled:
+		smoothing_enabled = false
+		
 	if event.is_action("scroll_up"):
 		if(zoom.x - zoom_speed>= min_zoom && zoom.y - zoom_speed >= min_zoom):
 			zoom.x -= zoom_speed
@@ -65,7 +68,7 @@ func _unhandled_input(event):
 		events[event.index] = event
 		if events.size() == 1:
 			
-			if center_anchor:
+			if achor_is_set:
 				var distance_to_anchor = (global_position + ((-event.relative) * zoom.x)).distance_to(center_anchor)
 				if distance_to_anchor > max_distance_from_achor:
 					return

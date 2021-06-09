@@ -543,9 +543,12 @@ func _on_game_ui_on_troop_traning_progress_button_pressed():
 		
 func _on_game_ui_on_cicle_region_button_pressed():
 	
+	_audio.stream = preload("res://asset/sound/click.wav")
+	_audio.play()
+	
 	if event_fort:
 		_camera.position = event_fort.position
-		_camera.smoothing_enabled = true
+		#_camera.smoothing_enabled = true
 		event_fort = null
 		return
 	
@@ -554,7 +557,6 @@ func _on_game_ui_on_cicle_region_button_pressed():
 	if _forts.empty():
 		return
 		
-		
 	var _last_nearest_fort = _forts[0]
 	for fort in _forts:
 		var _distance_to_camera = fort.position.distance_to(_camera.position)
@@ -562,15 +564,13 @@ func _on_game_ui_on_cicle_region_button_pressed():
 		if _distance_to_camera < _last_nearest_fort_distance_to_camera:
 			_last_nearest_fort = null
 			_last_nearest_fort = fort
-
+			
 #	_on_deselect_button_pressed()
 #	_on_fort_click(_fort, _fort.region)
 	
 	_camera.position = _last_nearest_fort.position
-	_camera.smoothing_enabled = true
+	#_camera.smoothing_enabled = true
 		
-	_audio.stream = preload("res://asset/sound/click.wav")
-	_audio.play()
 	
 func _on_game_ui_on_deselect_button_pressed():
 	deselect()
