@@ -4,6 +4,7 @@ class_name SaveLoad
 const GAME_SETTING_FILENAME = "user://setting_data.dat"
 const GAME_BATTLE_FILENAME = "user://battle_data.dat"
 const GAME_GENERATED_COLONY_FILENAME = "user://generated_colony_data.dat"
+const GAME_REWARD_SESSION_FILENAME = "user://rewarded_session_data.dat"
 
 func save(_filename, _data):
 	var file = File.new()

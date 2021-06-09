@@ -53,9 +53,11 @@ func _ready():
 		save_generated_colonies(colonies)
 		
 	display_colonies(colonies)
-	_adds.load_rewarded_video()
-	_ui.set_randomize_button_visible(false)
 	
+	if is_new_daily_reward_session():
+		_adds.load_rewarded_video()
+		
+	_ui.set_randomize_button_visible(false)
 	set_process(false)
 	
 	
@@ -76,6 +78,18 @@ func load_generated_colonies() -> Array:
 func save_generated_colonies(colonies):
 	var s = SaveLoad.new()
 	s.save(SaveLoad.GAME_GENERATED_COLONY_FILENAME,colonies)
+
+func is_new_daily_reward_session() -> bool:
+	var _date_to_string = ("{year}/{month}/{day}").format(OS.get_date())
+	
+	var s = SaveLoad.new()
+	var _session = s.load_save(SaveLoad.GAME_REWARD_SESSION_FILENAME)
+	
+	if !_session or _session.date != _date_to_string:
+		s.save(SaveLoad.GAME_REWARD_SESSION_FILENAME,{date = _date_to_string})
+		return true
+		
+	return false
 	
 	
 func clear_all():

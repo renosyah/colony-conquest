@@ -294,7 +294,7 @@ const ARCHERY_RANGE = {
 const MILLITARY_ACADEMY = {
 	"id" : "B06",
 	"type" : BUILDING_TYPE_UNIT_SPAWNER,
-	"name" : "Millitary Academy",
+	"name" : "Military Academy",
 	"description" : "Millitary building enable fort to train black powder range unit",
 	"icon" : "res://asset/ui/buildings/military_academy.png",
 	"cost" :1600.0,

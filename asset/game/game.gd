@@ -553,7 +553,7 @@ func _on_game_ui_on_cicle_region_button_pressed():
 		return
 	
 	var _forts = get_owned_forts(GlobalConst.ID_PLAYER)
-	
+		
 	if _forts.empty():
 		return
 		
