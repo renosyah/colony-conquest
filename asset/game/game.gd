@@ -672,16 +672,20 @@ func _on_attack_delay_timeout():
 	if !_enemies_id_bot_with_forts.empty() and !_all_target.empty():
 		var _enemy_bot_id = _enemies_id_bot_with_forts[rand_range(0,_enemies_id_bot_with_forts.size())]
 		enemy_bot_on_action(_enemy_bot_id,_all_target)
-		enemy_bot_upgrade_troop(_enemy_bot_id)
-		enemy_bot_build(_enemy_bot_id)
+		
+		for _bot_id in _enemies_id_bot_with_forts:
+			enemy_bot_upgrade_troop(_bot_id)
+			enemy_bot_build(_bot_id)
 			
 			
 	if !_neutrals_id_bot_with_forts.empty() and !_all_neutral_target.empty():
 		var _neutral_bot_id = _neutrals_id_bot_with_forts[rand_range(0,_neutrals_id_bot_with_forts.size())]
 		enemy_bot_on_action(_neutral_bot_id,_all_neutral_target)
-		enemy_bot_upgrade_troop(_neutral_bot_id)
-		enemy_bot_build(_neutral_bot_id)
-	
+		
+		for _bot_id in _neutrals_id_bot_with_forts:
+			enemy_bot_upgrade_troop(_bot_id)
+			enemy_bot_build(_bot_id)
+		
 	
 func enemy_bot_build(bot_id):
 	if !players.has(bot_id):
