@@ -468,11 +468,15 @@ static func get_troop_upgrade_cost(_troop_in_building) -> float:
 	return round(_troop_in_building.cost + total_current_attribute * _troop_in_building.level)
 
 static func upgrade_troop(_pointer_to_troop_in_building):
+	if _pointer_to_troop_in_building.has("counter_bonus"):
+		var _keys = _pointer_to_troop_in_building["counter_bonus"].keys()
+		for key in _keys:
+			_pointer_to_troop_in_building["counter_bonus"][key].bonus_attack_damage += 2.0
+		
 	_pointer_to_troop_in_building.level += 1
-	for upgrade_key in _pointer_to_troop_in_building.upgrade.keys():
+	var _keys = _pointer_to_troop_in_building.upgrade.keys()
+	for upgrade_key in _keys:
 		_pointer_to_troop_in_building.data[upgrade_key] += _pointer_to_troop_in_building.upgrade[upgrade_key]
-		
-		
 		
 		
 ################# unit upgrade ################

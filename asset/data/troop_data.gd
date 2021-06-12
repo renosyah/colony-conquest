@@ -337,13 +337,13 @@ const TROOP_TYPE_MACEMAN = {
 	"category" : CATEGORY_LIGHT_SWORD_INFANTRY,
 	"counter_bonus" : {
 		CATEGORY_LIGHT_SPEAR_INFANTRY : {
-			"bonus_attack_damage" : 10.0
+			"bonus_attack_damage" : 14.0
 		},
 		CATEGORY_MEDIUM_SPEAR_INFANTRY : {
-			"bonus_attack_damage" : 8.0
+			"bonus_attack_damage" : 12.0
 		},
 		CATEGORY_HEAVY_SPEAR_INFANTRY : {
-			"bonus_attack_damage" : 8.0
+			"bonus_attack_damage" : 12.0
 		},
 	}
 }
@@ -469,13 +469,13 @@ const TROOP_TYPE_SENTINEL = {
 	"category" : CATEGORY_HEAVY_SWORD_INFANTRY,
 	"counter_bonus" : {
 		CATEGORY_LIGHT_SPEAR_INFANTRY : {
-			"bonus_attack_damage" : 16.0
+			"bonus_attack_damage" : 20.0
 		},
 		CATEGORY_MEDIUM_SPEAR_INFANTRY : {
-			"bonus_attack_damage" : 14.0
+			"bonus_attack_damage" : 16.0
 		},
 		CATEGORY_HEAVY_SPEAR_INFANTRY : {
-			"bonus_attack_damage" : 14.0
+			"bonus_attack_damage" : 16.0
 		},
 	}
 }
@@ -506,13 +506,13 @@ const TROOP_TYPE_AXEMAN = {
 	"category" : CATEGORY_LIGHT_SWORD_INFANTRY,
 	"counter_bonus" : {
 		CATEGORY_LIGHT_SPEAR_INFANTRY : {
-			"bonus_attack_damage" : 14.0
+			"bonus_attack_damage" : 16.0
 		},
 		CATEGORY_MEDIUM_SPEAR_INFANTRY : {
-			"bonus_attack_damage" : 12.0
+			"bonus_attack_damage" : 16.0
 		},
 		CATEGORY_HEAVY_SPEAR_INFANTRY : {
-			"bonus_attack_damage" : 12.0
+			"bonus_attack_damage" : 16.0
 		},
 	}
 }
