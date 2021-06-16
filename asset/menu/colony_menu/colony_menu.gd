@@ -86,8 +86,10 @@ func is_new_daily_reward_session() -> bool:
 	var s = SaveLoad.new()
 	var _session = s.load_save(SaveLoad.GAME_REWARD_SESSION_FILENAME)
 	
-	if !_session or _session.date != _date_to_string:
-		s.save(SaveLoad.GAME_REWARD_SESSION_FILENAME,{date = _date_to_string})
+	if !_session:
+		return true
+		 
+	if _session.date != _date_to_string:
 		return true
 		
 	return false
@@ -142,7 +144,7 @@ func generate_new_colonies() -> Array:
 func spawn_player_choosed_colony():
 	clear_all()
 	_ui.set_visible(false)
-	
+		
 	var regions_owners = []
 	regions_owners.append(battle_setting.players[GlobalConst.ID_PLAYER].duplicate())
 		
@@ -381,6 +383,8 @@ func _on_colony_menu_on_randomize_button_click():
 #	get_tree().change_scene("res://asset/menu/colony_menu/colony_menu.tscn")
 	
 	
+	
+	
 func _on_adds_rewarded_video_loaded():
 	_ui.set_randomize_button_visible(true)
 	
@@ -396,7 +400,13 @@ func _on_adds_rewarded(_currency, _ammount):
 	var colonies = generate_new_colonies()
 	save_generated_colonies(colonies)
 	
+	var _date_to_string = ("{year}/{month}/{day}").format(OS.get_date())
+	var s = SaveLoad.new()
+	s.save(SaveLoad.GAME_REWARD_SESSION_FILENAME,{date = _date_to_string})
+	
 	get_tree().reload_current_scene()
+	
+	
 	
 	
 func _on_colony_menu_on_battle_setting_set(max_bot, max_neutral_bot, starting_logistic,dificulty,biom_id):

@@ -12,7 +12,8 @@ script = ExtResource( 6 )
 
 [node name="adds" type="Node" parent="."]
 script = ExtResource( 1 )
-rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+is_real = true
+rewarded_id = "ca-app-pub-5253928771677202/4208813259"
 max_ad_content_rate = "PG"
 
 [node name="map" parent="." instance=ExtResource( 3 )]
