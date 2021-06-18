@@ -14,7 +14,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 12.678, -6.464 ) ]
+"values": [ Vector2( 11.7941, -15.591 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("sprite:rotation_degrees")
@@ -50,7 +50,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 9.9248, -7.54455 ) ]
+"values": [ Vector2( 9.39447, -10.5498 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("arm_left:rotation_degrees")
@@ -74,7 +74,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 9.02607, -0.41295 ) ]
+"values": [ Vector2( 8.49574, -7.30724 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("arm_right:rotation_degrees")

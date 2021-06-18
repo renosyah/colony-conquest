@@ -24,7 +24,8 @@ onready var _bandit_holder = $bandit_attack
 var bandit_troop_datas = [
 	TroopData.TROOP_TYPE_SPEARMAN,
 	TroopData.TROOP_TYPE_MACEMAN,
-	TroopData.TROOP_TYPE_MILITIAMEN
+	TroopData.TROOP_TYPE_MILITIAMEN,
+	TroopData.TROOP_TYPE_LIGHT_CAVALRY
 ] 
 var forts = []
 var regions = []

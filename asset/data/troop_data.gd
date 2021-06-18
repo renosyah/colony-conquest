@@ -46,9 +46,9 @@ const CATEGORY_HEAVY_RANGE_CAVALRY = "chrc-3"
 # cosmetic troop only
 const TROOP_TYPE_FLAG_HOLDER = {
 	"class" : CLASS_NON_COMBATANT,
-	"melee_attack_damage" : 0.0,
+	"melee_attack_damage" : 1.0,
 	"pierce_attack_damage" : 0.0,
-	"hit_point" : 1.0,
+	"hit_point" : 10.0,
 	"melee_armor" : 0.0,
 	"pierce_armor" : 0.0,
 	"range_attack" : 70.0,
@@ -73,9 +73,9 @@ const TROOP_TYPE_FLAG_HOLDER = {
 }
 const TROOP_TYPE_DRUMMER = {
 	"class" : CLASS_NON_COMBATANT,
-	"melee_attack_damage" : 0.0,
+	"melee_attack_damage" : 1.0,
 	"pierce_attack_damage" : 0.0,
-	"hit_point" : 1.0,
+	"hit_point" : 10.0,
 	"melee_armor" : 0.0,
 	"pierce_armor" : 0.0,
 	"range_attack" : 70.0,

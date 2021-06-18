@@ -11,6 +11,7 @@ const PITCHFORK = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" : ["weapon_ready","weapon_ready_2"],
 	"attack_animation" : ["weapon_polearm_trusting"],
 }
@@ -20,6 +21,7 @@ const SPEAR = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" :  ["weapon_ready","weapon_ready_2"],
 	"attack_animation" : ["weapon_polearm_trusting"],
 }
@@ -29,6 +31,7 @@ const PIKE = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" :  ["weapon_ready","weapon_ready_2"],
 	"attack_animation" : ["weapon_sword_slashing_2","weapon_polearm_trusting"],
 }
@@ -38,6 +41,7 @@ const HALBERD = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" :  ["weapon_ready","weapon_ready_2"],
 	"attack_animation" : ["weapon_sword_slashing_2","weapon_polearm_trusting"],
 }
@@ -47,6 +51,7 @@ const LANCE = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" :  ["weapon_ready","weapon_ready_2"],
 	"attack_animation" : ["weapon_sword_slashing_2","weapon_polearm_trusting","weapon_sword_slashing"],
 }
@@ -56,6 +61,7 @@ const MEDIUM_LANCE = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" :  ["weapon_ready","weapon_ready_2"],
 	"attack_animation" : ["weapon_sword_slashing_2","weapon_polearm_trusting","weapon_sword_slashing"],
 }
@@ -65,6 +71,7 @@ const HEAVY_LANCE = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" :  ["weapon_ready","weapon_ready_2"],
 	"attack_animation" : ["weapon_sword_slashing_2","weapon_polearm_trusting","weapon_sword_slashing"],
 }
@@ -74,6 +81,7 @@ const MUSKET_MELEE = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" :  ["weapon_ready","weapon_ready_2"],
 	"attack_animation" : ["weapon_polearm_trusting"],
 }
@@ -86,6 +94,7 @@ const DAGGER = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" : ["weapon_ready","weapon_ready_3"],
 	"attack_animation": ["weapon_sword_slashing_2"]
 }
@@ -95,6 +104,7 @@ const AXE = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" : ["weapon_ready_3"],
 	"attack_animation": ["weapon_sword_slashing","weapon_sword_slashing_2"]
 }
@@ -104,6 +114,7 @@ const MACE = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" : ["weapon_ready_3"],
 	"attack_animation": ["weapon_sword_slashing","weapon_sword_slashing_2"]
 }
@@ -113,6 +124,7 @@ const HAMMER = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" : ["weapon_ready_3"],
 	"attack_animation": ["weapon_sword_slashing","weapon_sword_slashing_2"]
 }
@@ -148,6 +160,7 @@ const SHORT_SWORD = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" : ["weapon_ready_3"],
 	"attack_animation" : ["weapon_sword_slashing","weapon_sword_slashing_2"]
 }
@@ -157,6 +170,7 @@ const LONG_SWORD = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" : ["weapon_ready_3"],
 	"attack_animation": ["weapon_sword_slashing","weapon_sword_slashing_2"]
 }
@@ -166,6 +180,7 @@ const SABER_SWORD = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" : ["weapon_ready_3"],
 	"attack_animation" : ["weapon_sword_slashing_2"]
 }
@@ -175,6 +190,7 @@ const KATANA = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "",
 	"color" : null,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" : ["weapon_ready_2","weapon_ready_3"],
 	"attack_animation": ["weapon_sword_slashing_2"]
 }
@@ -188,7 +204,8 @@ const BOW = {
 	"weapon_firing_sound": "",
 	"color" : null,
 	"projectile_speed" : 700.0,
-	"ready_animation" : ["weapon_iddle"],
+	"iddle_animation" : ["weapon_iddle_2"],
+	"ready_animation" : ["weapon_iddle_2"],
 	"attack_animation": ["weapon_bow_firing"]
 }
 const LONGBOW = {
@@ -198,7 +215,8 @@ const LONGBOW = {
 	"weapon_firing_sound": "",
 	"color" : null,
 	"projectile_speed" : 650.0,
-	"ready_animation" : ["weapon_iddle"],
+	"iddle_animation" : ["weapon_iddle_2"],
+	"ready_animation" : ["weapon_iddle_2"],
 	"attack_animation": ["weapon_bow_firing"]
 }
 # javeline
@@ -209,7 +227,8 @@ const JAVELINE = {
 	"weapon_firing_sound": "",
 	"color" : null,
 	"projectile_speed" : 600.0,
-	"ready_animation" : ["weapon_ready"],
+	"iddle_animation" : ["weapon_iddle_2"],
+	"ready_animation" : ["weapon_iddle_2"],
 	"attack_animation": ["weapon_throwing"]
 }
 # grenade
@@ -221,7 +240,8 @@ const POWDER_GRENADE = {
 	"color" : null,
 	"payload_scene" : "res://asset/military/projectile/payload/explosive_payload.tscn",
 	"projectile_speed" : 400.0,
-	"ready_animation" : ["weapon_ready"],
+	"iddle_animation" : ["weapon_iddle_2"],
+	"ready_animation" : ["weapon_iddle_2"],
 	"attack_animation": ["weapon_throwing"]
 }
 # fire bomb
@@ -233,7 +253,8 @@ const FIRE_BOMB = {
 	"color" : null,
 	"payload_scene" : "res://asset/military/projectile/payload/explosive_payload.tscn",
 	"projectile_speed" : 400.0,
-	"ready_animation" : ["weapon_ready"],
+	"iddle_animation" : ["weapon_iddle_2"],
+	"ready_animation" : ["weapon_iddle_2"],
 	"attack_animation": ["weapon_throwing"]
 }
 
@@ -245,7 +266,8 @@ const CROSSBOW = {
 	"weapon_firing_sound": "",
 	"color" : null,
 	"projectile_speed" : 800.0,
-	"ready_animation" : ["weapon_ready"],
+	"iddle_animation" : ["weapon_iddle_2"],
+	"ready_animation" : ["weapon_iddle_2"],
 	"attack_animation": ["weapon_crossbow_firing"]
 }
 # firearms
@@ -255,7 +277,8 @@ const MUSKET = {
 	"weapon_projectile_sprite":"res://asset/military/projectile/empty.png",
 	"weapon_firing_sound": "res://asset/sound/cannon.wav",
 	"color" : null,
-	"projectile_speed" : 850.0,
+	"projectile_speed" : 950.0,
+	"iddle_animation" : ["weapon_iddle"],
 	"ready_animation" : ["weapon_iddle"],
 	"attack_animation": ["weapon_musket_firing"]
 }

@@ -101,7 +101,8 @@ func init_troop():
 		data.weapon.color = data.color
 		
 	_weapon.set_data(data.weapon)
-	
+		
+		
 	_play_ambient_sound()
 	set_process(false)
 	set_physics_process(false)

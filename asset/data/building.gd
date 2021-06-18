@@ -645,8 +645,7 @@ const GARRISON_EXPANSION = {
 	"icon" : "res://asset/ui/buildings/garrison_expansion.png",
 	"description" : "\"We got more bed and provision here\"",
 	"descriptions" : [
-		"+ 2 Garrison capacity",
-		"+ 4 Garison overload tolerant",
+		"+ 2 Garrison capacity"
 	],
 	"mode" : CASTLE_UPGRADE_MODE_ADD,
 	"updates" : [{
@@ -655,7 +654,7 @@ const GARRISON_EXPANSION = {
 	},
 	{
 		"attribute" : "max_garrison_to_rebel",
-		"value" : 4
+		"value" : 16
 	}]
 }
 const ADDITIONAL_SHOTER = {
