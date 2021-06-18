@@ -386,24 +386,28 @@ func _on_colony_menu_on_randomize_button_click():
 	
 	
 func _on_adds_rewarded_video_loaded():
-	_ui.set_randomize_button_visible(true)
+	if is_instance_valid(_ui):
+		_ui.set_randomize_button_visible(true)
 	
 func _on_adds_rewarded_video_closed():
-	_ui.set_randomize_button_visible(false)
+	if is_instance_valid(_ui):
+		_ui.set_randomize_button_visible(false)
 	
 func _on_adds_rewarded_video_failed_to_load(_error_code):
-	_ui.set_randomize_button_visible(false)
+	if is_instance_valid(_ui):
+		_ui.set_randomize_button_visible(false)
 	
 func _on_adds_rewarded(_currency, _ammount):
-	_ui.set_randomize_button_visible(true)
+	#_ui.set_randomize_button_visible(true)
 	
-	var colonies = generate_new_colonies()
-	save_generated_colonies(colonies)
+	var new_colonies = generate_new_colonies()
+	save_generated_colonies(new_colonies)
 	
 	var _date_to_string = ("{year}/{month}/{day}").format(OS.get_date())
 	var s = SaveLoad.new()
 	s.save(SaveLoad.GAME_REWARD_SESSION_FILENAME,{date = _date_to_string})
 	
+	#display_colonies(new_colonies)
 	get_tree().reload_current_scene()
 	
 	

@@ -33,7 +33,6 @@ __meta__ = {
 }
 
 [node name="choose_colony_layout" type="Control" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -244,7 +243,7 @@ scroll_vertical_enabled = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/choose_colony_layout/VBoxContainer/short_description/VBoxContainer/scroll_colony"]
 margin_right = 604.0
-margin_bottom = 140.0
+margin_bottom = 128.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -622,6 +621,7 @@ margin_bottom = 926.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="battle_setting_layout" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
@@ -704,7 +704,7 @@ size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/battle_setting_layout/PanelContainer/VBoxContainer/VBoxContainer/ScrollContainer"]
-margin_right = 574.0
+margin_right = 586.0
 margin_bottom = 1272.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

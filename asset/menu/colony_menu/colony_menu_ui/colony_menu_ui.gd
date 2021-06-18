@@ -101,7 +101,8 @@ func set_visible(_visible : bool = false):
 	
 	
 func set_randomize_button_visible(_visible : bool = false):
-	_randomize_button.visible = _visible
+	if is_instance_valid(_randomize_button):
+		_randomize_button.visible = _visible
 	
 	
 func display_setting():
